@@ -4,7 +4,7 @@
 	const CRAZY_PARTICLES_FREQUENCY = 0.1; // 0-1 frequency of crazy curvy unpredictable particles
 	const CRAZY_PARTICLE_CRAZINESS = 0.3; // 0-1 how crazy these crazy particles are
 	const BEZIER_MEDIAN = 0.5; // utility for mid-point bezier curves, to ensure smooth motion paths
-	const FORCE = 0.5; // 0-1 roughly the vertical force at which particles initially explode
+	const FORCE = 0.7; // 0-1 roughly the vertical force at which particles initially explode
 	const SIZE = 12; // max height for particle rectangles, diameter for particle circles
 	const FLOOR_HEIGHT = 800; // pixels the particles will fall from initial explosion point
 	const FLOOR_WIDTH = 1600; // horizontal spread of particles in pixels

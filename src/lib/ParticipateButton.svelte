@@ -15,7 +15,7 @@
 		setTimeout(() => values.set(participants), 200);
 	});
 
-	const duration = 3500;
+	const duration = 1500;
 	let confettiTime = false;
 	let button: HTMLButtonElement;
 
@@ -35,7 +35,11 @@
 <button on:click={click} type="button" bind:this={button}>
 	<section class="flex justify-center">
 		{#if confettiTime}
-			<ConfettiSprayer {duration} stageWidth={button.clientWidth + 100} />
+			<ConfettiSprayer
+				{duration}
+				stageWidth={button.clientWidth + 200}
+				stageHeight={button.clientHeight + 200}
+			/>
 		{/if}
 	</section>
 	📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
