@@ -1,0 +1,61 @@
+<script lang="ts">
+	export let participants = 15;
+	import { tweened } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
+	import { t } from './translations';
+	import { onMount } from 'svelte';
+	import ConfettiSprayer from './ConfettiSprayer.svelte';
+
+	const values = tweened(0, {
+		duration: 1800,
+		easing: cubicOut
+	});
+
+	onMount(() => {
+		setTimeout(() => values.set(participants), 200);
+	});
+
+	const duration = 3500;
+	let confettiTime = false;
+	let button: HTMLButtonElement;
+
+	let timeout: number | null;
+
+	function click() {
+		if (timeout) return;
+		confettiTime = true;
+		console.log('confetti !');
+		timeout = window.setTimeout(() => {
+			confettiTime = false;
+			timeout = null;
+		}, duration + 100);
+	}
+</script>
+
+<button on:click={click} type="button" bind:this={button}>
+	<section class="flex justify-center">
+		{#if confettiTime}
+			<ConfettiSprayer {duration} stageWidth={button.clientWidth + 100} />
+		{/if}
+	</section>
+	📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
+</button>
+
+<style lang="postcss">
+	button {
+		@apply max-w-2xl inline-block bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600
+        hover:to-red-700  focus:from-red-700 focus:to-red-800 transition-all
+         text-white px-4 py-4 rounded-3xl
+         border-b-red-900 border-b-8 hover:border-b-4  active:border-0
+        text-2xl font-bold border-opacity-50 shadow-lg
+         outline-none backdrop-blur-lg backdrop-filter  bottom-0 flex-auto m-2;
+	}
+	/*
+	button:hover {
+		padding-bottom: calc(1rem + 4px);
+	}
+
+	button:active {
+		padding-bottom: calc(1rem + 8px);
+	} */
+</style>
