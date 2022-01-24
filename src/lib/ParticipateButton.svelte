@@ -5,6 +5,8 @@
 	import { t } from './translations';
 	import { onMount } from 'svelte';
 	import ConfettiSprayer from './ConfettiSprayer.svelte';
+	import { goto } from '$app/navigation';
+	import { sondageURL } from './constants';
 
 	const values = tweened(0, {
 		duration: 1800,
@@ -23,7 +25,11 @@
 
 	let timeout: number | null;
 
+	let sondageAnchor: HTMLAnchorElement;
+
 	function click() {
+		sondageAnchor.click();
+		goto(sondageURL, {});
 		clickAudio.play();
 		values.set(++participants);
 		if (timeout) return;
@@ -37,6 +43,7 @@
 </script>
 
 <div class="wrapper" style="height: {button?.clientHeight + 15 || 0}px">
+	<a target="_blank" class="hidden" rel="external" href={sondageURL} bind:this={sondageAnchor}>out</a>
 	<button class="partyButton" on:click={click} type="button" bind:this={button}>
 		<audio src={'/fart2.mp3'} bind:this={clickAudio} />
 

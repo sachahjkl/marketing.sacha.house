@@ -32,7 +32,7 @@
 </main>
 
 <footer>
-	<small>&copy; Copyright {new Date().getFullYear()}, marketing.hjkl.it</small>
+	 <span>🎉 &copy; Copyright {new Date().getFullYear()}, marketing.hjkl.it 🎉</span>
 </footer>
 
 <style lang="postcss">

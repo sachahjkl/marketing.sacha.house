@@ -6,7 +6,7 @@
 	export let href: string = '';
 </script>
 
-<a {href} class="{site} button">
+<a {href} class="{site} button" rel="external">
 	<span class="inline-block items-center mr-2 w-6">
 	<slot  name="logo">empty</slot>
 	</span>

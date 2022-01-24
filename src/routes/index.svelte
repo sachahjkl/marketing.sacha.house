@@ -10,7 +10,12 @@
 	import Twitter from '$lib/icons/socials/twitter.svg';
 	import TikTok from '$lib/icons/socials/tiktok.svg';
 	import Instagram from '$lib/icons/socials/instagram.svg';
-	import { tiktokURL } from '$lib/constants';
+	import {
+		instagramAccountURL,
+		tiktokAccountURL,
+		tiktokURL,
+		twitterAccountURL
+	} from '$lib/constants';
 	import About from './about.svelte';
 	import InstagramPreview from '$lib/InstagramPreview.svelte';
 	import TikTokPreview from '$lib/TikTokPreview.svelte';
@@ -57,13 +62,13 @@
 
 		<h2>{$t('index.sub')}</h2>
 		<div class="flex flex-wrap justify-start my-2 mt-4">
-			<SocialButton text={'Twitter'} site={'twitter'}>
+			<SocialButton text={'Twitter'} site={'twitter'} href={twitterAccountURL}>
 				<Twitter slot="logo" />
 			</SocialButton>
-			<SocialButton text={'TikTok'} site={'tiktok'}>
+			<SocialButton text={'TikTok'} site={'tiktok'} href={tiktokAccountURL}>
 				<TikTok slot="logo" />
 			</SocialButton>
-			<SocialButton text={'Instagram'} site={'instagram'}>
+			<SocialButton text={'Instagram'} site={'instagram'} href={instagramAccountURL}>
 				<Instagram slot="logo" />
 			</SocialButton>
 		</div>
@@ -122,10 +127,7 @@
 
 <div>
 	<SocialBox first={'right'}>
-		<span
-			class="border shadow-sm rounded-lg overflow-hidden"
-			slot="left"
-		>
+		<span class="border shadow-sm rounded-lg overflow-hidden" slot="left">
 			<InstagramPreview />
 		</span>
 		<div class="flex fill-fuchsia-500 text-fuchsia-500 items-center" slot="right">
