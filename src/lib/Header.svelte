@@ -114,12 +114,12 @@
 		@apply not-italic;
 	}
 
-	#toggler {
+	/* #toggler {
 		@apply from-purple-300 to-purple-400 rounded-lg
 		 hover:shadow-lg hover:from-purple-400 hover:to-purple-500
 		 active:shadow-lg active:from-purple-500 active:to-purple-600
 		 text-slate-900;
-	}
+	} */
 
 	li {
 		@apply flex;
@@ -129,7 +129,7 @@
 		@apply flex place-items-center;
 	}
 
-	#menu a {
+	#menu a, #toggler {
 		@apply from-pink-200 to-pink-300 rounded-lg
 		 hover:shadow-lg hover:from-pink-300 hover:to-pink-400
 		 active:shadow-lg active:from-pink-400 active:to-pink-500

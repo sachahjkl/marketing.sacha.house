@@ -29,7 +29,6 @@
 
 	function click() {
 		sondageAnchor.click();
-		goto(sondageURL, {});
 		clickAudio.play();
 		values.set(++participants);
 		if (timeout) return;
@@ -45,14 +44,13 @@
 <div class="wrapper" style="height: {button?.clientHeight + 15 || 0}px">
 	<a target="_blank" class="hidden" rel="external" href={sondageURL} bind:this={sondageAnchor}>out</a>
 	<button class="partyButton" on:click={click} type="button" bind:this={button}>
-		<audio src={'/fart2.mp3'} bind:this={clickAudio} />
+		<audio src={'/click.mp3'} bind:this={clickAudio} />
 
 		<section class="flex justify-center">
 			{#if confettiTime}
 				<ConfettiSprayer
 					{duration}
-					stageWidth={button.clientWidth + 200}
-					stageHeight={button.clientHeight + 200}
+
 				/>
 			{/if}
 		</section>
