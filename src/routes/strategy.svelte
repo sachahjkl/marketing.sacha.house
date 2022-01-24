@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { t } from '$lib/translations';
 
-	let title = $t('strategy.title');
+	let title : string;
+	$: title = $t('strategy.title');
 </script>
 
 <svelte:head>

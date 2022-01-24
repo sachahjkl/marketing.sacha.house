@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
+import { threeMinifier } from '@yushijinhun/three-minifier-rollup';
 // const postcss = require('./postcss.config.cjs');
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -15,7 +16,12 @@ const config = {
 		adapter: adapter(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+		vite: {
+			plugins: [
+				{ ...threeMinifier(), enforce: 'pre' } // <=== Add plugin here
+			]
+		}
 	}
 };
 

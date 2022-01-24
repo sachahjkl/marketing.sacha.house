@@ -8,16 +8,26 @@
 
 	const participants = getParticipants();
 
-	let title = $t('index.title');
+	let title: string;
+	$: title = $t('index.title');
 
 	let showHero = false;
+
+	let heroTitle: string;
+	$: {
+		showHero = false;
+		heroTitle = $t('index.hero');
+
+		setTimeout(() => (showHero = true), 10);
+	}
 
 	function getParticipants() {
 		return 10;
 	}
 
 	onMount(() => {
-		setTimeout(() => (showHero = true), 50);
+		// setTimeout(() => (showHero = true), 300);
+		showHero = true;
 	});
 </script>
 
@@ -29,8 +39,8 @@
 	<hgroup>
 		<h1>
 			{#if showHero}
-				<span in:typewriter={{ speed: 30, delay: 0 }}>
-					{`👗 ${$t('index.hero')}`}
+				<span in:typewriter={{ speed: 15, delay: 300 }}>
+					{`👗 ${heroTitle}`}
 				</span>
 			{/if}
 		</h1>
@@ -49,13 +59,9 @@
 
 <hr class="my-4" />
 
-<div class="button">
+<div class="cta">
 	<ParticipateButton />
 </div>
-
-<section id="cta">
-	<button>📊 Participez au sondage !</button>
-</section>
 
 <section id="shopping-cart">
 	<!-- ThreeJS shoppingCart -->
@@ -107,7 +113,7 @@
 		@apply text-base;
 	}
 
-	.button {
+	.cta {
 		@apply flex flex-wrap justify-center mb-4;
 	}
 </style>

@@ -1,8 +1,9 @@
 <script lang="ts">
+
 	import { t, locale } from './translations';
 	import lang from './translations/lang.json';
 
-	export let checked: boolean = false;
+	export let checked: boolean = $locale === 'en';
 
 	export let color = '#2196F3';
 
@@ -41,16 +42,11 @@
 
 	.slider:before {
 		@apply absolute bg-white rounded-full transition-all border shadow-sm;
-		/* position: absolute; */
 		content: '';
 		height: 14px;
 		width: 14px;
 		left: 5px;
 		bottom: 5px;
-		/* background-color: white; */
-		/* -webkit-transition: 0.4s; */
-		/* transition: 0.4s; */
-		/* border-radius: 50%; */
 	}
 
 	input:checked + .slider {

@@ -6,19 +6,14 @@
 	export let site: Site;
 </script>
 
-<button class={site}>
+<button class="{site} button">
 	<img src={svg} alt={site} />
 	{text}
 </button>
 
 <style lang="postcss">
 	button {
-		@apply select-none cursor-pointer rounded-lg
-		block px-3 py-2 border-opacity-50 shadow
-        outline-none backdrop-blur-lg backdrop-filter m-1
-        bg-gradient-to-r
-        transition-all overflow-hidden focus:shadow-lg hover:shadow-lg text-white
-        font-bold;
+		@apply text-white font-bold;
 	}
 
 	button img {

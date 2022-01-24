@@ -1,22 +1,28 @@
 <script context="module" lang="ts">
-	import { locale, loadTranslations } from '$lib/translations';
+	import { defaultLocale, loadTranslations, locale } from '$lib/translations';
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async ({ url }) => {
+	export const load: Load = async ({ url, session }) => {
 		const { pathname } = url;
-		const defaultLocale = 'fr'; // get from cookie / user session etc...
-		const initLocale = locale.get() || defaultLocale;
-		await loadTranslations(initLocale, pathname);
+		const l = session.locale || defaultLocale; // get from cookie / user session etc...
+		await loadTranslations(l, pathname);
 		return {};
 	};
 </script>
 
 <script lang="ts">
 	import Header from '$lib/Header.svelte';
-
-	import '../app.css';
-
 	import { menuItems } from '$lib/constants';
+	import '../app.css';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		document.documentElement.setAttribute('lang', $locale);
+
+		locale.subscribe((locale) => {
+			document.documentElement.setAttribute('lang', locale);
+		});
+	});
 </script>
 
 <Header {menuItems} />

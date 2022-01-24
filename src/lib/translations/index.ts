@@ -1,8 +1,10 @@
 import i18n from 'sveltekit-i18n';
 import lang from './lang.json';
 
+export const defaultLocale = 'fr';
+
 export const config: import('sveltekit-i18n').Config = {
-	fallbackLocale: 'fr',
+	fallbackLocale: defaultLocale,
 	translations: {
 		...lang
 	},
@@ -20,37 +22,37 @@ export const config: import('sveltekit-i18n').Config = {
 		{
 			locale: 'en',
 			key: 'index',
-			routes: ['/'],
+			routes: ['/', ''],
 			loader: async () => (await import('./en/index.json')).default
 		},
 		{
 			locale: 'fr',
 			key: 'index',
-			routes: ['/'],
+			routes: ['/', ''],
 			loader: async () => (await import('./fr/index.json')).default
 		},
 		{
 			locale: 'en',
 			key: 'strategy',
-			routes: ['/'],
+			routes: ['/strategy'],
 			loader: async () => (await import('./en/strategy.json')).default
 		},
 		{
 			locale: 'fr',
 			key: 'strategy',
-			routes: ['/'],
+			routes: ['/strategy'],
 			loader: async () => (await import('./fr/strategy.json')).default
 		},
 		{
 			locale: 'en',
 			key: 'about',
-			routes: ['/'],
+			routes: ['/about'],
 			loader: async () => (await import('./en/about.json')).default
 		},
 		{
 			locale: 'fr',
 			key: 'about',
-			routes: ['/'],
+			routes: ['/about'],
 			loader: async () => (await import('./fr/about.json')).default
 		}
 	]

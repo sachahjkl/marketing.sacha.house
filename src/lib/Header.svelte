@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-	import { t } from '$lib/translations';
-	import { onDestroy, onMount } from 'svelte';
+	import { locale, t } from '$lib/translations';
+	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import LanguageToggle from './LanguageToggle.svelte';
 	import { onClickOutside } from './utils';
@@ -28,7 +28,7 @@
 <header>
 	<nav>
 		<div id="mobile-menu">
-			<button bind:this={toggler} type="menu" on:click={() => (menuOpen = !menuOpen)} id="toggler">
+			<button class="button font-bold" bind:this={toggler} type="menu" on:click={() => (menuOpen = !menuOpen)} id="toggler">
 				{#if menuOpen}
 					<span title={$t('menu.close-burger')}>
 						<i>❌</i>
@@ -54,7 +54,7 @@
 		</div>
 		<ul id="menu">
 			{#each menuItems as item}
-				<li><a href={item.url}>{$t(`menu.${item.name}`)}</a></li>
+				<li><a class="button font-bold" href={item.url}>{$t(`menu.${item.name}`)}</a></li>
 			{/each}
 		</ul>
 
@@ -115,21 +115,11 @@
 	}
 
 	#toggler {
-		@apply select-none cursor-pointer
-		block px-3 py-2 border-opacity-50 shadow-sm
-         outline-none backdrop-blur-lg backdrop-filter m-1
-         bg-gradient-to-r from-purple-300 to-purple-400 rounded-lg
+		@apply from-purple-300 to-purple-400 rounded-lg
 		 hover:shadow-lg hover:from-purple-400 hover:to-purple-500
 		 active:shadow-lg active:from-purple-500 active:to-purple-600
-		 transition-all overflow-hidden;
+		 text-slate-900;
 	}
-
-	/* #toggler {
-	} */
-
-	/* img {
-		@apply h-5 inline-block mx-auto transition-all hover:shadow-sm;
-	} */
 
 	li {
 		@apply flex;
@@ -139,20 +129,10 @@
 		@apply flex place-items-center;
 	}
 
-	/* #socials li {
-		@apply mr-1 transition-all p-2 rounded-lg hover:bg-slate-900 hover:bg-opacity-20;
-	} */
-
-	/* #menu li {
-		@apply;
-	} */
-
 	#menu a {
-		@apply block px-3 py-2 border-opacity-50 shadow-sm m-1
-         outline-none backdrop-blur-lg backdrop-filter
-         bg-gradient-to-r from-pink-200 to-pink-300 rounded-lg
+		@apply from-pink-200 to-pink-300 rounded-lg
 		 hover:shadow-lg hover:from-pink-300 hover:to-pink-400
 		 active:shadow-lg active:from-pink-400 active:to-pink-500
-		 transition-all;
+		 text-slate-900;
 	}
 </style>
