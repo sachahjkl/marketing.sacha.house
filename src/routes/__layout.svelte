@@ -32,7 +32,7 @@
 </main>
 
 <footer>
-	<p>Nos réseaux sociaux !</p>
+	<small>&copy; Copyright {new Date().getFullYear()}, marketing.hjkl.it</small>
 </footer>
 
 <style lang="postcss">
@@ -41,6 +41,6 @@
 	}
 
 	footer {
-		@apply container text-center mx-auto bg-white shadow-sm rounded-t-xl p-1 border;
+		@apply container text-center mx-auto bg-white shadow-sm rounded-t-xl p-1 border py-3;
 	}
 </style>

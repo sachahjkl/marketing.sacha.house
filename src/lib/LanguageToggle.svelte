@@ -50,11 +50,15 @@
 	}
 
 	input:checked + .slider {
-		background-color: var(--switch-color, blue);
+		@apply bg-gradient-to-r from-pink-300 to-pink-400
+		  hover:from-pink-400 hover:to-pink-500
+		  active:from-pink-500 active:to-pink-600;
+		/* background-color: var(--switch-color, blue); */
 	}
 
 	input:checked + .slider {
-		box-shadow: 0 0 1px var(--switch-color, blue);
+		/* @apply shadow shadow-red-500; */
+		/* box-shadow: 0 0 1px var(--switch-color, blue); */
 	}
 
 	input:checked + .slider:before {

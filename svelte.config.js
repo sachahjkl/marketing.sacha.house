@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import { threeMinifier } from '@yushijinhun/three-minifier-rollup';
-// const postcss = require('./postcss.config.cjs');
+import svg from '@poppanator/sveltekit-svg';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -19,7 +19,8 @@ const config = {
 		target: '#svelte',
 		vite: {
 			plugins: [
-				{ ...threeMinifier(), enforce: 'pre' } // <=== Add plugin here
+				{ ...threeMinifier(), enforce: 'pre' }, // <=== Add plugin here
+				svg()
 			]
 		}
 	}

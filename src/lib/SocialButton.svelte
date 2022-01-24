@@ -1,25 +1,28 @@
 <script lang="ts">
 	type Site = 'twitter' | 'tiktok' | 'instagram' | 'facebook';
 
-	export let svg: string;
 	export let text: string;
 	export let site: Site;
+	export let href: string = '';
 </script>
 
-<button class="{site} button">
-	<img src={svg} alt={site} />
+<a {href} class="{site} button">
+	<span class="inline-block items-center mr-2 w-6">
+	<slot  name="logo">empty</slot>
+	</span>
 	{text}
-</button>
+</a>
 
 <style lang="postcss">
-	button {
-		@apply text-white font-bold;
+	.button {
+		@apply fill-white text-white font-bold flex items-center;
 	}
 
-	button img {
+
+	/* .button img {
 		@apply inline-block w-6 mr-1;
 		filter: invert();
-	}
+	} */
 
 	.twitter {
 		@apply from-blue-400 to-blue-500

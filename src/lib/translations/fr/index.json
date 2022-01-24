@@ -3,5 +3,11 @@
 	"sub": "IFT Shop est un service d'hébergement et d’intermédiation en ligne qui permet aux utilisateurs d'échanger, de vendre et d'acheter des objets sur la plateforme.",
 	"more": "En savoir plus",
 	"title": "Particpez au sondage ! - Accueil",
-	"participants-btn": "Déjà {{participants; default: 0; }} participants ! Rejoignez nous !"
+	"participants-btn": "Déjà {{participants; default: 0; }} participants ! Rejoignez nous !",
+	"twitter-hero": "Notre compte Twitter",
+	"tiktok-hero": "Notre compte TikTok",
+	"instagram-hero": "Notre compte Instagram",
+	"twitter-sub": "Vous retrouverez ici toutes nos dernières actus concernant le sondage !",
+	"tiktok-sub": "Vous retrouverez ici toutes nos vidéos tournés en live !",
+	"instagram-sub": "Vous retrouverez ici nos photos !"
 }

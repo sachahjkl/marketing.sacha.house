@@ -37,7 +37,7 @@
 </script>
 
 <div class="wrapper" style="height: {button?.clientHeight + 15 || 0}px">
-	<button on:click={click} type="button" bind:this={button}>
+	<button class="partyButton" on:click={click} type="button" bind:this={button}>
 		<audio src={'/fart2.mp3'} bind:this={clickAudio} />
 
 		<section class="flex justify-center">
@@ -54,23 +54,23 @@
 </div>
 
 <style lang="postcss">
-	button {
+	.partyButton {
 		@apply w-full max-w-2xl inline-block  bg-red-600 hover:bg-red-700
           focus:bg-red-800 transition-all
          text-white px-4 py-4 rounded-3xl
          border-b-red-900  border-b-8
         text-2xl font-bold border-opacity-50 shadow-lg
          outline-none backdrop-blur-lg backdrop-filter  absolute bottom-0
-		 -translate-x-1/2 left-1/2 z-10;
+		 -translate-x-1/2 left-1/2 z-10 text-center;
 	}
 
-	button:hover {
+	.partyButton:hover {
 		border-bottom-width: 8px;
 	}
-	button {
+	.partyButton {
 		border-bottom-width: 12px;
 	}
-	button:active {
+	.partyButton:active {
 		border-bottom-width: 0px;
 	}
 	.wrapper {

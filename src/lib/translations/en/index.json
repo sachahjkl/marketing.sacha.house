@@ -3,5 +3,11 @@
 	"sub": "IFT Shop is a hosting & intermediation online service allowing users to share, sell and buy stuff on the platform.",
 	"more": "En savoir plus",
 	"title": "Take the survey ! - Home",
-	"participants-btn": "Already {{participants; default: 0; }} participants ! Join us !"
+	"participants-btn": "Already {{participants; default: 0; }} participants ! Join us !",
+	"twitter-hero": "Our Twitter account",
+	"tiktok-hero": "Our TikTok account",
+	"instagram-hero": "Our Instagram account",
+	"twitter-sub": "Here you can read our latest tweets about the survey !",
+	"tiktok-sub": "Come watch our latest videos !",
+	"instagram-sub": "See our latest photos !"
 }
