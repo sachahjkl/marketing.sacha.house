@@ -41,45 +41,38 @@
 	}
 </script>
 
-<div class="wrapper" style="height: {button?.clientHeight + 15 || 0}px">
-	<a target="_blank" class="hidden" rel="external" href={sondageURL} bind:this={sondageAnchor}>out</a>
-	<button class="partyButton" on:click={click} type="button" bind:this={button}>
-		<audio src={'/click.mp3'} bind:this={clickAudio} />
+<a target="_blank" class="hidden" rel="external" href={sondageURL} bind:this={sondageAnchor}>out</a>
+<button class="partyButton" on:click={click} type="button" bind:this={button}>
+	<audio src={'/click.mp3'} bind:this={clickAudio} />
 
-		<section class="flex justify-center">
-			{#if confettiTime}
-				<ConfettiSprayer
-					{duration}
-
-				/>
-			{/if}
-		</section>
-		📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
-	</button>
-</div>
+	<section class="flex justify-center">
+		{#if confettiTime}
+			<ConfettiSprayer {duration} />
+		{/if}
+	</section>
+	📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
+</button>
 
 <style lang="postcss">
 	.partyButton {
-		@apply w-full max-w-2xl inline-block  bg-red-600 hover:bg-red-700
+		@apply w-full max-w-2xl inline-block bg-red-600 hover:bg-red-700
           focus:bg-red-800 transition-all
          text-white px-4 py-4 rounded-3xl
          border-b-red-900  border-b-8
         text-2xl font-bold border-opacity-50 shadow-lg
-         outline-none backdrop-blur-lg backdrop-filter  absolute bottom-0
-		 -translate-x-1/2 left-1/2 z-10 text-center;
+         outline-none backdrop-blur-lg backdrop-filter;
 	}
 
 	.partyButton:hover {
 		border-bottom-width: 8px;
+		margin-top: 4px;
 	}
 	.partyButton {
 		border-bottom-width: 12px;
 	}
 	.partyButton:active {
-		border-bottom-width: 0px;
-	}
-	.wrapper {
-		@apply flex-auto relative m-2;
+		border-bottom-width: 0px ;
+		margin-top: 12px;
 	}
 
 	/*

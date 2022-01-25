@@ -72,7 +72,7 @@
 
 		<SC.OrbitControls
 			target={[0, 0, 0]}
-			enableZoom={true}
+			enableZoom={false}
 			enablePan={false}
 			maxZoom={5}
 			minZoom={5}
@@ -92,7 +92,6 @@
 <style lang="postcss">
 	.scene {
 		width: auto;
-		/* min-width: 400px; */
 		height: 300px;
 		@apply mx-auto rounded-xl relative block overflow-hidden;
 	}

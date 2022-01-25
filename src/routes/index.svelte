@@ -26,24 +26,9 @@
 	let title: string;
 	$: title = $t('index.title');
 
-	let showHero = false;
-
-	let heroTitle: string;
-	$: {
-		showHero = false;
-		heroTitle = $t('index.hero');
-
-		setTimeout(() => (showHero = true), 10);
-	}
-
 	function getParticipants() {
 		return 10;
 	}
-
-	onMount(() => {
-		// setTimeout(() => (showHero = true), 300);
-		showHero = true;
-	});
 </script>
 
 <svelte:head>
@@ -53,11 +38,7 @@
 <section class="hero">
 	<hgroup>
 		<h1>
-			{#if showHero}
-				<span in:typewriter={{ speed: 15, delay: 300 }}>
-					{`👗 ${heroTitle}`}
-				</span>
-			{/if}
+			👗 {$t('index.hero')}
 		</h1>
 
 		<h2>{$t('index.sub')}</h2>
