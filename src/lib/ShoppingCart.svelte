@@ -74,10 +74,9 @@
 			target={[0, 0, 0]}
 			enableZoom={false}
 			enablePan={false}
-			maxZoom={5}
-			minZoom={5}
 			enableDamping
 			maxPolarAngle={Math.PI * 0.51}
+			minPolarAngle={Math.PI * 0.51}
 		/>
 		<SC.AmbientLight intensity={0.6} color={'white'} />
 		<SC.DirectionalLight
