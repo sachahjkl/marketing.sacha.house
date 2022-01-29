@@ -1,56 +1,42 @@
+<script context="module" lang="ts">
+	export const DURATION = 1500;
+</script>
+
 <script lang="ts">
-	export let participants = 15;
-	import { tweened } from 'svelte/motion';
-	import { cubicOut } from 'svelte/easing';
-	import { t } from './translations';
-	import { onMount } from 'svelte';
 	import ConfettiSprayer from './ConfettiSprayer.svelte';
-	import { goto } from '$app/navigation';
-	import { sondageURL } from './constants';
 
-	const values = tweened(0, {
-		duration: 1800,
-		easing: cubicOut
-	});
+	export let soundFile = '/click.mp3';
+	export let clickCallback = () => {};
 
-	onMount(() => {
-		setTimeout(() => values.set(participants), 200);
-	});
-
-	const duration = 1500;
 	let confettiTime = false;
-	let button: HTMLButtonElement;
-
 	let clickAudio: HTMLAudioElement;
-
 	let timeout: number | null;
 
-	let sondageAnchor: HTMLAnchorElement;
-
 	function click() {
-		sondageAnchor.click();
 		clickAudio.play();
-		values.set(++participants);
+		clickCallback();
 		if (timeout) return;
 		confettiTime = true;
 		console.log('confetti !');
 		timeout = window.setTimeout(() => {
 			confettiTime = false;
 			timeout = null;
-		}, duration + 100);
+		}, DURATION + 100);
 	}
 </script>
 
-<a target="_blank" class="hidden" rel="external" href={sondageURL} bind:this={sondageAnchor}>out</a>
-<button class="partyButton" on:click={click} type="button" bind:this={button}>
-	<audio src={'/click.mp3'} bind:this={clickAudio} />
+<button class="partyButton" type="button" on:click={click}>
+	{#if soundFile}
+		<audio src={soundFile} bind:this={clickAudio} />
+	{/if}
 
 	<section class="flex justify-center">
 		{#if confettiTime}
-			<ConfettiSprayer {duration} />
+			<ConfettiSprayer duration={DURATION} />
 		{/if}
 	</section>
-	📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
+
+	<slot>Party Button !</slot>
 </button>
 
 <style lang="postcss">
@@ -71,16 +57,7 @@
 		border-bottom-width: 12px;
 	}
 	.partyButton:active {
-		border-bottom-width: 0px ;
+		border-bottom-width: 0px;
 		margin-top: 12px;
 	}
-
-	/*
-	button:hover {
-		padding-bottom: calc(1rem + 4px);
-	}
-
-	button:active {
-		padding-bottom: calc(1rem + 8px);
-	} */
 </style>

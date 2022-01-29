@@ -13,12 +13,8 @@
 
 <style lang="postcss">
 	header {
-		@apply z-50 fixed top-0 left-1/2 -translate-x-1/2 bg-white shadow-sm
-		rounded-b-xl p-1 border container mx-auto justify-between flex items-center;
-	}
-
-	:global(header + *) {
-		@apply mt-16;
+		@apply z-50 sticky top-0 bg-white shadow-sm
+		rounded-b-xl p-1 mb-1 border mx-auto justify-between flex items-center ;
 	}
 
 	nav {

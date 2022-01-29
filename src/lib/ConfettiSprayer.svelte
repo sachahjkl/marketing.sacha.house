@@ -115,7 +115,6 @@
 </script>
 
 <script lang="ts">
-	import Svg from './Svg.svelte';
 	import { onMount } from 'svelte';
 	/**
 	 * Number of confetti particles to create
@@ -315,12 +314,11 @@
 		setCSSVar('--rotation-duration', `${rotation}ms`);
 		setCSSVar('--border-radius', `${isCircle ? '50%' : '0'}`);
 	}
-	let transformContainer;
 	console.log($$slots);
 </script>
 
 {#if isVisible && isValid}
-	<div class="container" style="--floor-height: {stageHeight}px;">
+	<div class="ctnr" style="--floor-height: {stageHeight}px;">
 		{#each particles as { color, degree }}
 			<div
 				class="particle"
@@ -349,7 +347,7 @@
 			transform: rotate3d(var(--rotation), 360deg);
 		}
 	}
-	.container {
+	.ctnr {
 		width: 0;
 		height: 0;
 		overflow: visible;

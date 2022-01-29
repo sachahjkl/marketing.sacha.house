@@ -8,6 +8,8 @@
 		await loadTranslations(l, pathname);
 		return {};
 	};
+
+	export const prerender = true;
 </script>
 
 <script lang="ts">
@@ -39,58 +41,69 @@
 	});
 </script>
 
-<Header>
-	<Dropdown open={dropdownOpen} slot="menu-mobile">
-		<button
-			class="button"
-			slot="toggler"
-			type="menu"
-			bind:this={toggler}
-			on:click={() => (dropdownOpen = !dropdownOpen)}
-		>
-			{#if dropdownOpen}
-				<span title={$t('menu.close-burger')}>
-					<span>❌</span>
-					{$t('menu.close-burger')}
-				</span>
-			{:else}
-				<span title={$t('menu.open-burger')}>
-					<span>🍔</span>
-					{$t('menu.open-burger')}
-				</span>
-			{/if}
-		</button>
-		<ul class="rounded-xl p-3 mt-1 bg-white border shadow-sm" slot="content" bind:this={content}>
+<div id="container">
+	<Header>
+		<Dropdown open={dropdownOpen} slot="menu-mobile">
+			<button
+				class="button"
+				slot="toggler"
+				type="menu"
+				bind:this={toggler}
+				on:click={() => (dropdownOpen = !dropdownOpen)}
+			>
+				{#if dropdownOpen}
+					<span title={$t('menu.close-burger')}>
+						<span>❌</span>
+						{$t('menu.close-burger')}
+					</span>
+				{:else}
+					<span title={$t('menu.open-burger')}>
+						<span>🍔</span>
+						{$t('menu.open-burger')}
+					</span>
+				{/if}
+			</button>
+			<ul class="rounded-xl p-3 mt-1 bg-white border shadow-sm" slot="content" bind:this={content}>
+				{#each menuItems as item}
+					<li class="dropdown-li"><a href={item.url}>{$t(`menu.${item.name}`)}</a></li>
+				{/each}
+			</ul>
+		</Dropdown>
+
+		<ul class="flex" slot="menu-desktop">
 			{#each menuItems as item}
-				<li class="dropdown-li"><a href={item.url}>{$t(`menu.${item.name}`)}</a></li>
+				<li><a class="button" href={item.url}>{$t(`menu.${item.name}`)}</a></li>
 			{/each}
 		</ul>
-	</Dropdown>
 
-	<ul class="flex" slot="menu-desktop" >
-		{#each menuItems as item}
-			<li><a class="button" href={item.url}>{$t(`menu.${item.name}`)}</a></li>
-		{/each}
-	</ul>
+		<LanguageToggle slot="addon" />
+	</Header>
 
-	<LanguageToggle slot="addon" />
-</Header>
+	<main>
+		<slot />
+	</main>
 
-<main>
-	<slot />
-</main>
-
-<footer>
-	<span>🎉 &copy; Copyright {new Date().getFullYear()}, marketing.hjkl.it 🎉</span>
-</footer>
+	<footer>
+		<span>🎉 &copy; Copyright {new Date().getFullYear()}, marketing.hjkl.it 🎉</span>
+	</footer>
+</div>
 
 <style lang="postcss">
+
+	#container {
+		@apply container mx-auto max-w-5xl px-2 min-h-screen;
+	}
+
+	#container > * {
+		width: 100%
+	}
+
 	main {
-		@apply container mx-auto mb-3 rounded-xl shadow-sm border p-4 bg-white;
+		@apply mx-auto mb-3 rounded-xl shadow-sm border p-4 bg-white flex-grow;
 	}
 
 	footer {
-		@apply container text-center mx-auto bg-white shadow-sm rounded-t-xl p-1 border py-3;
+		@apply text-center mx-auto bg-white shadow-sm rounded-t-xl p-1 border py-3 mt-auto;
 	}
 
 	.dropdown-li {

@@ -42,3 +42,5 @@ export const tiktokURL =
 export const twitterAccountURL = 'https://twitter.com/dojaCat/';
 export const tiktokAccountURL = 'https://www.tiktok.com/@dojacat?lang=fr';
 export const instagramAccountURL = 'https://www.instagram.com/dojacat/';
+
+export const countdownDate = new Date(2022, 4, 12, 0, 0, 0, 0);

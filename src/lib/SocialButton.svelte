@@ -25,20 +25,20 @@
 	} */
 
 	.twitter {
-		@apply from-blue-400 to-blue-500
-		  hover:from-blue-500 hover:to-blue-600
-		 active:from-blue-600 active:to-blue-700;
+		@apply from-blue-300 to-blue-400
+		  hover:from-blue-400 hover:to-blue-500
+		 active:from-blue-500 active:to-blue-600;
 	}
 
 	.tiktok {
-		@apply from-cyan-400 to-pink-500
-		  hover:from-cyan-500 hover:to-pink-600
-		 active:from-cyan-600 active:to-pink-700;
+		@apply from-cyan-300 to-pink-400
+		  hover:from-cyan-400 hover:to-pink-500
+		 active:from-cyan-500 active:to-pink-600;
 	}
 
 	.instagram {
-		@apply from-orange-400 to-fuchsia-500
-		  hover:from-orange-500 hover:to-fuchsia-600
-		 active:from-orange-600 active:to-fuchsia-700;
+		@apply from-orange-300 to-fuchsia-400
+		  hover:from-orange-400 hover:to-fuchsia-500
+		 active:from-orange-500 active:to-fuchsia-600;
 	}
 </style>

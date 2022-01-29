@@ -11,6 +11,12 @@
 	--breakpoint-xxl: 1400p;
 }
 
+@font-face {
+	font-family: 'Digital-7';
+	font-display: swap;
+	src: url('/fonts/digital-7/digital_7_mono.ttf') format('truetype');
+}
+
 body {
 	font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	@apply bg-slate-100 overflow-x-hidden;
