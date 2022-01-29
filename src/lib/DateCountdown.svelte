@@ -34,7 +34,7 @@
 <style lang="postcss">
 	time {
 		@apply border-4 rounded border-gray-400 px-2 py-1 bg-black
-        font-bold text-2xl shadow-sm text-center inline-block drop-shadow-md transition-all cursor-pointer;
+        font-bold text-xl shadow-sm text-center inline-block drop-shadow-md transition-all cursor-pointer;
 		color: greenyellow;
 	}
 
