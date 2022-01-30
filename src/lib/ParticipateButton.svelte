@@ -5,6 +5,8 @@
 <script lang="ts">
 	import ConfettiSprayer from './ConfettiSprayer.svelte';
 
+	import Pointer from "./icons/cursors/pointer.svg";
+
 	export let soundFile = '/click.mp3';
 	export let clickCallback = () => {};
 
@@ -37,6 +39,12 @@
 	</section>
 
 	<slot>Party Button !</slot>
+
+<span class="pointer">
+	<Pointer/>
+</span>
+
+
 </button>
 
 <style lang="postcss">
@@ -46,7 +54,21 @@
          text-white px-4 py-4 rounded-3xl
          border-b-red-900  border-b-8
         text-2xl font-bold border-opacity-50 shadow-lg
-         outline-none backdrop-blur-lg backdrop-filter;
+         outline-none backdrop-blur-lg backdrop-filter relative;
+	}
+
+	.pointer {
+		@apply absolute transition-all;
+
+		top: 95%;
+		right: 2%;
+		transform: rotate(-30deg);
+		animation: slide 1s infinite alternate;
+
+	}
+
+	:global(.pointer svg) {
+		@apply w-12 h-fit;
 	}
 
 	.partyButton:hover {
@@ -59,5 +81,16 @@
 	.partyButton:active {
 		border-bottom-width: 0px;
 		margin-top: 12px;
+	}
+
+	@keyframes slide {
+		from {
+			transform: rotate(-30deg) translateY(50%) ;
+		}
+
+		to {
+			transform: rotate(-30deg) translateY(-50%) ;
+		}
+
 	}
 </style>

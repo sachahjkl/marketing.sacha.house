@@ -55,7 +55,7 @@ countdownDate,
 <section class="hero">
 	<hgroup>
 		<h1>
-			👗 {$t('index.hero')}
+			👗  {@html $t('index.hero')}
 		</h1>
 
 		<h2>{$t('index.sub')}</h2>
@@ -112,11 +112,16 @@ countdownDate,
 <section class="prose">
 	<h2>Ceci est un titre</h2>
 
-	<p>
+	<div class="flex flex-row flex-wrap items-center mt-3">
+	<img class="max-w-xs  mx-4 rounded border shadow-sm" src="/img/woman-shopping.jpg" alt="Vêtements vracs">
+	<p class="flex-1">
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at minima quia rem placeat non
 		velit fuga quo neque quaerat rerum cupiditate incidunt nostrum quibusdam quis, alias libero!
 		Tenetur, adipisci.
 	</p>
+	</div>
+
+
 
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at minima quia rem placeat non
@@ -197,7 +202,7 @@ countdownDate,
 	} */
 
 	.hero h1 {
-		@apply font-bold text-4xl mb-3 drop-shadow-sm text-pink-400;
+		@apply font-bold text-4xl mb-3 drop-shadow-sm ;
 	}
 
 	.hero h2 {
