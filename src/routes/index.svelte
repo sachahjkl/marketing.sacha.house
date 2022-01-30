@@ -21,7 +21,7 @@ countdownDate,
 	import TwitterPreview from '$lib/TwitterPreview.svelte';
 	import { cubicOut } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
-import DateCountdown from '$lib/DateCountdown.svelte';
+	import DateCountdown from '$lib/DateCountdown.svelte';
 
 	let sondageAnchor: HTMLAnchorElement;
 
@@ -81,7 +81,7 @@ import DateCountdown from '$lib/DateCountdown.svelte';
 <section class="prose">
 	<h2>🕰️ {$t("index.time-limited-offer-title")}</h2>
 
-	<div class="my-4">
+	<div class="my-4 mx-auto w-fit">
 		<DateCountdown to={countdownDate} />
 	</div>
 
@@ -188,7 +188,7 @@ import DateCountdown from '$lib/DateCountdown.svelte';
 	}
 
 	.hero hgroup {
-		@apply max-w-4xl pt-8 my-8 text-center;
+		@apply max-w-prose pt-8 my-8 text-center;
 	}
 
 	/* .shopping {
