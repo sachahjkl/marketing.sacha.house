@@ -85,11 +85,11 @@
 
 	@keyframes slide {
 		from {
-			transform: rotate(-30deg) translateY(50%) ;
+			transform: rotate(-30deg) translateY(20%) ;
 		}
 
 		to {
-			transform: rotate(-30deg) translateY(-50%) ;
+			transform: rotate(-30deg) translateY(-20%) ;
 		}
 
 	}

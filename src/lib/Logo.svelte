@@ -1,0 +1,28 @@
+
+<svg viewBox="-2000 -1000 4000 2000">
+  <path id="inf" d="M354-354A500 500 0 1 1 354 354L-354-354A500 500 0 1 0-354 354z"></path>
+  <use xlink:href="#inf" stroke-dasharray="1570 5143" stroke-dashoffset="6713px"></use>
+</svg>
+
+
+<style lang="postcss">
+	svg {
+        max-height: fit-content;
+        border-radius: 3px;
+		fill: none;
+		@apply stroke-pink-100 block;
+		stroke-linecap: round;
+		stroke-width: 10%;
+	}
+
+	use {
+		@apply stroke-pink-500;
+		animation: a 2s linear infinite;
+	}
+
+	@keyframes a {
+		to {
+			stroke-dashoffset: 0px;
+		}
+	}
+</style>

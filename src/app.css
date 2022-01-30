@@ -24,9 +24,14 @@
 	src: url('/fonts/digital-7/digital_7_mono_italic.ttf') format('truetype');
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	@apply bg-slate-100 overflow-x-hidden;
+
 }
 
 @layer components {

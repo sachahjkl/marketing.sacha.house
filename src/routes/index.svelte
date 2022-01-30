@@ -22,6 +22,7 @@ countdownDate,
 	import { cubicOut } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
 	import DateCountdown from '$lib/DateCountdown.svelte';
+import Logo from '$lib/Logo.svelte';
 
 	let sondageAnchor: HTMLAnchorElement;
 
@@ -52,10 +53,11 @@ countdownDate,
 	<title>{title}</title>
 </svelte:head>
 
-<section class="hero">
+
+<section id="hero" class="hero">
 	<hgroup>
 		<h1>
-			👗  {@html $t('index.hero')}
+			👗  { $t('index.hero-p1')} <br><em>{ $t('index.hero-p2')}</em>
 		</h1>
 
 		<h2>{$t('index.sub')}</h2>
@@ -71,6 +73,7 @@ countdownDate,
 			</SocialButton>
 		</div>
 	</hgroup>
+	<!-- <Logo/> -->
 	<!-- <div class="shopping">
 		<ShoppingCart />
 	</div> -->
@@ -194,6 +197,10 @@ countdownDate,
 
 	.hero hgroup {
 		@apply max-w-prose pt-8 my-8 text-center;
+	}
+
+	.hero em {
+		@apply text-pink-400 not-italic ;
 	}
 
 	/* .shopping {
