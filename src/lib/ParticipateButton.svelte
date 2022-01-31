@@ -5,7 +5,7 @@
 <script lang="ts">
 	import ConfettiSprayer from './ConfettiSprayer.svelte';
 
-	import Pointer from "./icons/cursors/pointer.svg";
+	import Pointer from './icons/cursors/pointer.svg';
 
 	export let soundFile = '/click.mp3';
 	export let clickCallback = () => {};
@@ -40,11 +40,9 @@
 
 	<slot>Party Button !</slot>
 
-<span class="pointer">
-	<Pointer/>
-</span>
-
-
+	<span class="pointer">
+		<Pointer />
+	</span>
 </button>
 
 <style lang="postcss">
@@ -64,7 +62,6 @@
 		right: 2%;
 		transform: rotate(-30deg);
 		animation: slide 1s infinite alternate;
-
 	}
 
 	:global(.pointer svg) {
@@ -85,12 +82,11 @@
 
 	@keyframes slide {
 		from {
-			transform: rotate(-30deg) translateY(20%) ;
+			transform: rotate(-30deg) translateY(20%);
 		}
 
 		to {
-			transform: rotate(-30deg) translateY(-20%) ;
+			transform: rotate(-30deg) translateY(-20%);
 		}
-
 	}
 </style>
