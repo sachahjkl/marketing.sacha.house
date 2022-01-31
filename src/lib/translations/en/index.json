@@ -24,5 +24,6 @@
 	"and": "and",
 	"remaining": "remaining",
 	"time-limited-offer-title": "This is a time limited offer !",
-	"time-limited-offer-p1": "You don't have much time left to join our survey so make sure to take up on this offer <b>before the timer reaches 0</b> !"
+	"time-limited-offer-p1": "You don't have much time left to join our survey so make sure to take up on this offer <b>before the timer reaches 0</b> !",
+	"label-language": "Toggle to switch languages."
 }

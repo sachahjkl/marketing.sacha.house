@@ -12,8 +12,9 @@
 
 <section title={$t('menu.select-lang')}>
 	<span class="mr-1 drop-shadow-sm">{lang.fr.flag}</span>
-	<label style="--switch-color: {color}" class="switch">
-		<input type="checkbox" bind:checked />
+	<label for="languageToggle" style="--switch-color: {color}" class="switch">
+		<span class="hidden">{$t("label-language")}</span>
+		<input title="{$t("label-language")}" name="languageToggle" type="checkbox" bind:checked />
 		<span class="slider" />
 	</label>
 

@@ -39,7 +39,7 @@ body {
 		@apply select-none cursor-pointer rounded-xl
 		block px-3 py-2 shadow outline-none backdrop-blur-lg
 		backdrop-filter m-1 bg-gradient-to-r
-        transition-all overflow-hidden focus:shadow-lg hover:shadow-lg
+        transition-colors overflow-hidden focus:shadow-lg hover:shadow-lg
 		 from-blue-400 to-blue-500
 		  hover:from-blue-500 hover:to-blue-600
 		 active:from-blue-600 active:to-blue-700 text-white;

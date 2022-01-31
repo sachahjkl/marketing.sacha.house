@@ -2,7 +2,7 @@
 	export let user = 'dojaCat';
 </script>
 
-<div class="wrapper" style="height: 500px">
+<div class="wrapper" style="height: 500px; width: 350px;">
 	<a
 		class="twitter-timeline"
 		data-width="350"

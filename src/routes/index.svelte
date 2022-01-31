@@ -105,7 +105,7 @@ import Logo from '$lib/Logo.svelte';
 			💣 {$t('index.participants-error')}
 		{/await}
 	</ParticipateButton>
-	<a target="_blank" class="hidden" rel="external" href={sondageURL} bind:this={sondageAnchor}>
+	<a target="_blank" class="hidden" rel="noreferrer" href={sondageURL} bind:this={sondageAnchor}>
 		out
 	</a>
 </div>
@@ -116,7 +116,7 @@ import Logo from '$lib/Logo.svelte';
 	<h2>Ceci est un titre</h2>
 
 	<div class="flex flex-row flex-wrap items-center mt-3">
-	<img class="max-w-xs  mx-4 rounded border shadow-sm" src="/img/woman-shopping.jpg" alt="Vêtements vracs">
+	<!-- <img class="max-w-xs  mx-4 rounded border shadow-sm" src="/img/woman-shopping.jpg" alt="Vêtements vracs"> -->
 	<p class="flex-1">
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at minima quia rem placeat non
 		velit fuga quo neque quaerat rerum cupiditate incidunt nostrum quibusdam quis, alias libero!
@@ -138,7 +138,7 @@ import Logo from '$lib/Logo.svelte';
 <div class="socials">
 	<SocialBox first={'right'}>
 		<div slot="left">
-			<TwitterPreview user="dojaCat" />
+			<!-- <TwitterPreview user="dojaCat" /> -->
 		</div>
 
 		<div class="flex fill-blue-500 text-blue-500 items-center" slot="right">
@@ -172,7 +172,7 @@ import Logo from '$lib/Logo.svelte';
 	</SocialBox>
 	<SocialBox first={'right'}>
 		<span class="border shadow-sm rounded-lg overflow-hidden" slot="left">
-			<InstagramPreview />
+			<!-- <InstagramPreview /> -->
 		</span>
 		<div class="flex fill-fuchsia-500 text-fuchsia-500 items-center" slot="right">
 			<span class=" mr-4 h-auto" style="width: 120px">
@@ -200,7 +200,7 @@ import Logo from '$lib/Logo.svelte';
 	}
 
 	.hero em {
-		@apply text-pink-400 not-italic ;
+		@apply text-pink-500 not-italic ;
 	}
 
 	/* .shopping {
@@ -225,8 +225,9 @@ import Logo from '$lib/Logo.svelte';
 	}
 
 	.prose h2 {
-		@apply font-bold text-2xl mb-1 drop-shadow-sm text-pink-400;
+		@apply font-bold text-2xl mb-1 drop-shadow-sm text-pink-500;
 	}
+
 	.prose p {
 		@apply mb-1;
 	}

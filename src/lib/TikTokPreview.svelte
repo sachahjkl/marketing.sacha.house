@@ -2,13 +2,14 @@
 	export let src = '';
 </script>
 
-<video controls {src}>
-	<track kind="captions" />
-</video>
+<span class="hidden">{src}</span>
 
+<!-- <video controls {src}>
+	<track kind="captions" />
+</video> -->
 <style lang="postcss">
-	video {
+	/* video {
 		@apply w-auto rounded-lg border shadow-sm;
 		max-height: 700px;
-	}
+	} */
 </style>

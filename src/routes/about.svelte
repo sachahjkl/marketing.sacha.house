@@ -11,7 +11,7 @@
 </svelte:head>
 
 <section class="content">
-	<h1 class="font-bold text-3xl underline">a propos</h1>
+	<h1 class="font-bold text-3xl underline">{$t('about.title')}</h1>
 
 	<ShoppingCart />
 </section>

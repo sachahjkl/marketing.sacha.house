@@ -24,5 +24,6 @@
 	"and": "et",
 	"remaining": "restants",
 	"time-limited-offer-title": "Offre limitée dans le temps !",
-	"time-limited-offer-p1": "Il ne vous reste plus beaucoup de temps pour participer au sondage, profitez en <b>avant que le compteur n'atteigne 0</b> !"
+	"time-limited-offer-p1": "Il ne vous reste plus beaucoup de temps pour participer au sondage, profitez en <b>avant que le compteur n'atteigne 0</b> !",
+	"label-language": "Interupteur de changement de langue."
 }

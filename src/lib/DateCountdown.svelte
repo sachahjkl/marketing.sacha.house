@@ -55,24 +55,23 @@
 	time {
 		@apply border-4 rounded-lg border-gray-400 px-2 py-1
          text-2xl shadow text-center inline-block drop-shadow-md
-		 transition-all cursor-pointer text-red-600 italic;
+		 cursor-pointer text-red-600 italic;
 		background-color: rgb(31, 0, 0);
 	}
 
 	.text {
 		--color: rgb(230, 67, 67);
 		text-shadow: 0 0 5px var(--color);
-		@apply inline-block w-auto mx-auto relative rounded transition-all;
+		@apply inline-block w-auto mx-auto relative rounded;
 		font-family: 'Digital-7', 'monospace';
-
+		transition: text-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	}
-
 
 	.char-grid {
 		@apply opacity-25 absolute left-0;
 	}
 
-	time:hover .text {
+	.text:hover {
 		@apply text-red-500;
 		text-shadow: 0 0 10px var(--color);
 	}
