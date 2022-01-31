@@ -31,7 +31,6 @@ html {
 body {
 	font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	@apply bg-slate-100 overflow-x-hidden;
-
 }
 
 @layer components {
@@ -39,9 +38,12 @@ body {
 		@apply select-none cursor-pointer rounded-xl
 		block px-3 py-2 shadow outline-none backdrop-blur-lg
 		backdrop-filter m-1 bg-gradient-to-r
-        transition-colors overflow-hidden focus:shadow-lg hover:shadow-lg
+        overflow-hidden focus:shadow-lg hover:shadow-lg
 		 from-blue-400 to-blue-500
 		  hover:from-blue-500 hover:to-blue-600
 		 active:from-blue-600 active:to-blue-700 text-white;
+		transition-property: background-image, background , background-color , box-shadow, color;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
 	}
 }

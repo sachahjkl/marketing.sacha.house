@@ -64,14 +64,16 @@
 		text-shadow: 0 0 5px var(--color);
 		@apply inline-block w-auto mx-auto relative rounded;
 		font-family: 'Digital-7', 'monospace';
-		transition: text-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition-property: text-shadow, color;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
 	}
 
 	.char-grid {
 		@apply opacity-25 absolute left-0;
 	}
 
-	.text:hover {
+	time:hover .text {
 		@apply text-red-500;
 		text-shadow: 0 0 10px var(--color);
 	}

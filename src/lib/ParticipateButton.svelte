@@ -48,15 +48,17 @@
 <style lang="postcss">
 	.partyButton {
 		@apply w-full max-w-2xl inline-block bg-red-600 hover:bg-red-700
-          focus:bg-red-800 transition-all
          text-white px-4 py-4 rounded-3xl
          border-b-red-900  border-b-8
         text-2xl font-bold border-opacity-50 shadow-lg
          outline-none backdrop-blur-lg backdrop-filter relative;
+		transition-property: color, background-color, border-bottom-width, margin-top;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
 	}
 
 	.pointer {
-		@apply absolute transition-all;
+		@apply absolute;
 
 		top: 95%;
 		right: 2%;

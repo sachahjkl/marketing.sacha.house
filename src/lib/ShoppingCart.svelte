@@ -1,14 +1,9 @@
 <script lang="ts">
-	import * as THREE from 'three';
+	// import {} as THREE from 'three';
 	import * as SC from 'svelte-cubed';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 	import { onMount } from 'svelte';
-
-	SC.onFrame(() => {
-		// spin += 0.01;
-	});
-
-	let model;
+	import { Box3, Color, Fog, GridHelper, MeshBasicMaterial, PlaneGeometry, Vector3 } from 'three';
 
 	let pixelRatio = 1;
 
@@ -30,8 +25,8 @@
 			model.castShadow = true;
 			model.receiveShadow = true;
 
-			const box = new THREE.Box3().setFromObject(loaded.scene);
-			const center = box.getCenter(new THREE.Vector3());
+			const box = new Box3().setFromObject(loaded.scene);
+			const center = box.getCenter(new Vector3());
 
 			loaded.scene.position.x += loaded.scene.position.x - center.x;
 			loaded.scene.position.y += loaded.scene.position.y - center.y;
@@ -45,9 +40,9 @@
 <div class="scene">
 	<SC.Canvas
 		antialias={true}
-		background={new THREE.Color('white')}
+		background={new Color('white')}
 		{pixelRatio}
-		fog={new THREE.Fog('white', 20, 30)}
+		fog={new Fog('white', 20, 30)}
 		shadows
 	>
 		<SC.PerspectiveCamera target={[0, 0, 0]} position={[0, 0, 20]} />
@@ -57,15 +52,15 @@
 
 		<SC.Group position={[0, -1 / 2, 0]}>
 			<SC.Mesh
-				geometry={new THREE.PlaneGeometry(150, 150)}
-				material={new THREE.MeshBasicMaterial({ color: 'white' })}
+				geometry={new PlaneGeometry(150, 150)}
+				material={new MeshBasicMaterial({ color: 'white' })}
 				rotation={[-Math.PI / 2, 0, 0]}
 				position={[0, -5, 0]}
 				receiveShadow={true}
 			/>
 
 			<SC.Primitive
-				object={new THREE.GridHelper(150, 150, 0x000000, 0x555555)}
+				object={new GridHelper(150, 150, 0x000000, 0x555555)}
 				position={[0, -5, 0]}
 			/>
 		</SC.Group>
