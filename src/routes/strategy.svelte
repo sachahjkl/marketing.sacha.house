@@ -61,3 +61,4 @@
 <li>Nous contacter (chatbot)</li>
 <li>Lien vers le formulaire</li>
 <li>Newsletter</li>
+</ul>
