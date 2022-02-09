@@ -32,7 +32,7 @@
 			transparent 80px,
 			transparent 100px
 		);
-        animation: slide 60s infinite running linear;
+        /* animation: slide 60s infinite running linear; */
 		/* transition: background-position 200ms ease-in; */
 		@apply p-3 rounded-lg shadow-sm border;
 	}
@@ -63,20 +63,22 @@
 	}
 
 	form {
-		background: white;
-		@apply py-4 px-4 flex justify-center;
+		@apply p-4 flex justify-center
+        bg-white rounded-md shadow;
 	}
 
 	input {
-		@apply flex-auto border  px-3 py-2 rounded-l;
-        max-width: 30ch;
+		@apply flex-auto border px-3 py-2 rounded-l;
+        /* max-width: 30ch; */
+        min-width: 10ch;
 	}
 
 	button {
-		@apply flex-grow-0 rounded-r-md rounded-l-none py-2 my-0
+		@apply  rounded-r-md rounded-l-none py-2 my-0
         font-bold ml-0
         from-cyan-300 to-cyan-400
 		  hover:from-cyan-400 hover:to-cyan-500
 		 active:from-cyan-500 active:to-cyan-600;
+         min-width: 12ch;
 	}
 </style>

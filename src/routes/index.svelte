@@ -97,7 +97,7 @@
 
 	<div class="flex flex-row flex-wrap items-center mt-3">
 		<img
-			class="max-h-20 mx-4 rounded border shadow-sm"
+			class="max-h-20 mx-4 rounded border shadow-sm mt-4 animate-bounce"
 			src="/img/amazon-card.png"
 			alt="Vêtements vracs"
 		/>
