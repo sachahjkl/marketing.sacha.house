@@ -30,7 +30,8 @@ html {
 
 body {
 	font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	@apply bg-slate-100 overflow-x-hidden;
+	@apply overflow-x-hidden;
+	background: conic-gradient(from -270deg at 75% 110%, #ff00ff7a, floralwhite);
 }
 
 @layer components {
