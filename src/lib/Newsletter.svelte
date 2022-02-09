@@ -32,12 +32,24 @@
 			transparent 80px,
 			transparent 100px
 		);
-		transition: background-image 200ms ease-in;
+        animation: slide 60s infinite running linear;
+		/* transition: background-position 200ms ease-in; */
 		@apply p-3 rounded-lg shadow-sm border;
 	}
 
+    @keyframes slide {
+        from {
+            background-position: 0px 0;
+        }
+
+        to {
+            background-position: 280px 0;
+        }
+    }
+
 	.letter:hover {
-		background-image: repeating-linear-gradient(
+
+		/* background-image: repeating-linear-gradient(
 			135deg,
 			#83b3db 0px,
 			#84adcb 30px,
@@ -47,16 +59,17 @@
 			#f09290 80px,
 			transparent 80px,
 			transparent 100px
-		);
+		); */
 	}
 
 	form {
 		background: white;
-		@apply py-4 px-16 flex;
+		@apply py-4 px-4 flex justify-center;
 	}
 
 	input {
 		@apply flex-auto border  px-3 py-2 rounded-l;
+        max-width: 30ch;
 	}
 
 	button {
