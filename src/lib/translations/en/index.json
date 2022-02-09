@@ -25,5 +25,10 @@
 	"remaining": "remaining",
 	"time-limited-offer-title": "This is a time limited offer !",
 	"time-limited-offer-p1": "You don't have much time left to join our survey so make sure to take up on this offer <b>before the timer reaches 0</b> !",
-	"label-language": "Toggle to switch languages."
+	"label-language": "Toggle to switch languages.",
+	"join-socials": "Join our social networks",
+	"join-newsletter": "... and our newsletter ;)",
+	"giftcard-title": "Try your luck to win !",
+	"giftcard-p1": "Fill out the form and win the Amazon gift card worth $30.",
+	"subscribe": "Subscribe"
 }

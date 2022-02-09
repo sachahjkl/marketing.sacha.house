@@ -31,7 +31,12 @@ html {
 body {
 	font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	@apply overflow-x-hidden;
-	background: conic-gradient(from -270deg at 75% 110%, #ff00ff7a, floralwhite);
+	/* background: conic-gradient(from -270deg at 75% 110%, #ff00ff7a, floralwhite); */
+
+	background: url(/img/bg6.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 @layer components {

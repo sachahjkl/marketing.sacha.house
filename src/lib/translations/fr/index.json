@@ -25,5 +25,10 @@
 	"remaining": "restants",
 	"time-limited-offer-title": "Offre limitée dans le temps !",
 	"time-limited-offer-p1": "Il ne vous reste plus beaucoup de temps pour participer au sondage, profitez en <b>avant que le compteur n'atteigne 0</b> !",
-	"label-language": "Interupteur de changement de langue."
+	"label-language": "Interupteur de changement de langue.",
+	"join-socials": "Rejoignez nos réseaux sociaux",
+	"join-newsletter": "... et notre newsletter ;)",
+	"giftcard-title": "Tentez votre chance !",
+	"giftcard-p1": "Remplissez le formulaire et gagnez la carte cadeau Amazon d'une valeur de $30.",
+	"subscribe": "S'abonner"
 }

@@ -9,7 +9,7 @@
 	import TikTok from '$lib/icons/socials/tiktok.svg';
 	import Instagram from '$lib/icons/socials/instagram.svg';
 	import {
-countdownDate,
+		countdownDate,
 		instagramAccountURL,
 		sondageURL,
 		tiktokAccountURL,
@@ -22,7 +22,8 @@ countdownDate,
 	import { cubicOut } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
 	import DateCountdown from '$lib/DateCountdown.svelte';
-import Logo from '$lib/Logo.svelte';
+	import Logo from '$lib/Logo.svelte';
+	import Newsletter from '$lib/Newsletter.svelte';
 
 	let sondageAnchor: HTMLAnchorElement;
 
@@ -53,26 +54,36 @@ import Logo from '$lib/Logo.svelte';
 	<title>{title}</title>
 </svelte:head>
 
-
 <section id="hero" class="hero">
 	<hgroup>
 		<h1>
-			👗  { $t('index.hero-p1')} <br><em>{ $t('index.hero-p2')}</em>
+			👗 {$t('index.hero-p1')} <br /><em>{$t('index.hero-p2')}</em>
 		</h1>
 
 		<h2>{$t('index.sub')}</h2>
-		<div class="flex flex-wrap justify-center my-2 mt-4">
-			<SocialButton text={'Twitter'} site={'twitter'} href={twitterAccountURL}>
-				<Twitter slot="logo" />
-			</SocialButton>
-			<SocialButton text={'TikTok'} site={'tiktok'} href={tiktokAccountURL}>
-				<TikTok slot="logo" />
-			</SocialButton>
-			<SocialButton text={'Instagram'} site={'instagram'} href={instagramAccountURL}>
-				<Instagram slot="logo" />
-			</SocialButton>
+
+		<div class="cta mt-12">
+			<ParticipateButton {clickCallback}>
+				{#await participantsPromise}
+					<span class="animate-pulse">⌛</span> {$t('index.participants-loading')}
+				{:then { }}
+					📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
+				{:catch _error}
+					💣 {$t('index.participants-error')}
+				{/await}
+			</ParticipateButton>
+			<a
+				target="_blank"
+				class="hidden"
+				rel="noreferrer"
+				href={sondageURL}
+				bind:this={sondageAnchor}
+			>
+				out
+			</a>
 		</div>
 	</hgroup>
+	<img src="/img/design.png" class="block m-4 mx-auto max-w-sm" alt="Design" />
 	<!-- <Logo/> -->
 	<!-- <div class="shopping">
 		<ShoppingCart />
@@ -82,55 +93,58 @@ import Logo from '$lib/Logo.svelte';
 <hr class="my-8" />
 
 <section class="prose">
-	<h2>🕰️ {$t("index.time-limited-offer-title")}</h2>
+	<h2>🤑 {$t('index.giftcard-title')}</h2>
+
+	<div class="flex flex-row flex-wrap items-center mt-3">
+		<img
+			class="max-h-20 mx-4 rounded border shadow-sm"
+			src="/img/amazon-card.png"
+			alt="Vêtements vracs"
+		/>
+		<p class="flex-1">
+			{$t('index.giftcard-p1')}
+		</p>
+	</div>
+</section>
+
+<hr class="my-8" />
+
+<section class="prose">
+	<h2>🕰️ {$t('index.time-limited-offer-title')}</h2>
 
 	<div class="my-4 mx-auto w-fit">
 		<DateCountdown to={countdownDate} />
 	</div>
 
 	<p>
-		{@html $t("index.time-limited-offer-p1")}
+		{@html $t('index.time-limited-offer-p1')}
 	</p>
 </section>
 
 <hr class="my-8" />
 
-<div class="cta my-12">
-	<ParticipateButton {clickCallback}>
-		{#await participantsPromise}
-			<span class="animate-pulse">⌛</span> {$t('index.participants-loading')}
-		{:then { }}
-			📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
-		{:catch _error}
-			💣 {$t('index.participants-error')}
-		{/await}
-	</ParticipateButton>
-	<a target="_blank" class="hidden" rel="noreferrer" href={sondageURL} bind:this={sondageAnchor}>
-		out
-	</a>
-</div>
-
-<hr class="my-8" />
-
 <section class="prose">
-	<h2>Ceci est un titre</h2>
-
-	<div class="flex flex-row flex-wrap items-center mt-3">
-	<!-- <img class="max-w-xs  mx-4 rounded border shadow-sm" src="/img/woman-shopping.jpg" alt="Vêtements vracs"> -->
-	<p class="flex-1">
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at minima quia rem placeat non
-		velit fuga quo neque quaerat rerum cupiditate incidunt nostrum quibusdam quis, alias libero!
-		Tenetur, adipisci.
-	</p>
+	<h2>📢 {$t('index.join-socials')} ...</h2>
+	<div class="flex flex-wrap justify-center my-2 mt-4">
+		<SocialButton text={'Twitter'} site={'twitter'} href={twitterAccountURL}>
+			<Twitter slot="logo" />
+		</SocialButton>
+		<SocialButton text={'TikTok'} site={'tiktok'} href={tiktokAccountURL}>
+			<TikTok slot="logo" />
+		</SocialButton>
+		<SocialButton text={'Instagram'} site={'instagram'} href={instagramAccountURL}>
+			<Instagram slot="logo" />
+		</SocialButton>
 	</div>
 
+	<img src="/img/petal.png" class=" w-10 rotate-12 mx-auto mt-4 translate-x-4" alt="petal" />
+	<img src="/img/petal.png" class=" w-10 -rotate-45 mx-auto mt-3 -translate-x-6" alt="petal" />
+	<img src="/img/petal.png" class=" w-10 rotate-45 mx-auto mt-6 translate-x-1 " alt="petal" />
 
-
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam at minima quia rem placeat non
-		velit fuga quo neque quaerat rerum cupiditate incidunt nostrum quibusdam quis, alias libero!
-		Tenetur, adipisci.
-	</p>
+	<div class="mt-6">
+		<Newsletter />
+	</div>
+	<p class="text-center mt-4">{$t('index.join-newsletter')} 💌</p>
 </section>
 
 <hr class="my-8" />
@@ -200,7 +214,7 @@ import Logo from '$lib/Logo.svelte';
 	}
 
 	.hero em {
-		@apply text-pink-500 not-italic ;
+		@apply text-pink-500 not-italic;
 	}
 
 	/* .shopping {
@@ -209,7 +223,7 @@ import Logo from '$lib/Logo.svelte';
 	} */
 
 	.hero h1 {
-		@apply font-bold text-4xl mb-3 drop-shadow-sm ;
+		@apply font-bold text-4xl mb-3 drop-shadow-sm;
 	}
 
 	.hero h2 {

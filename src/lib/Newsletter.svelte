@@ -1,0 +1,69 @@
+<script lang="ts">
+	import { t } from './translations';
+
+	export let action = 'https://tinyletter.com/marketinghjkl';
+</script>
+
+<div class="letter">
+	<form
+		{action}
+		method="post"
+		target="popupwindow"
+		on:submit={() => {
+			window.open(action, 'popupwindow', 'scrollbars=yes,width=800,height=600');
+			return true;
+		}}
+	>
+		<input type="email" name="email" id="tlemail" placeholder="Email..." />
+		<button class="button" type="submit"> {$t('index.subscribe')} 📬</button>
+	</form>
+</div>
+
+<style lang="postcss">
+	.letter {
+		background-image: repeating-linear-gradient(
+			135deg,
+			#f29b91 0px,
+			#f09290 30px,
+			transparent 30px,
+			transparent 50px,
+			#83b3db 50px,
+			#84adcb 80px,
+			transparent 80px,
+			transparent 100px
+		);
+		transition: background-image 200ms ease-in;
+		@apply p-3 rounded-lg shadow-sm border;
+	}
+
+	.letter:hover {
+		background-image: repeating-linear-gradient(
+			135deg,
+			#83b3db 0px,
+			#84adcb 30px,
+			transparent 30px,
+			transparent 50px,
+			#f29b91 50px,
+			#f09290 80px,
+			transparent 80px,
+			transparent 100px
+		);
+	}
+
+	form {
+		background: white;
+		@apply py-4 px-16 flex;
+	}
+
+	input {
+		@apply flex-auto border  px-3 py-2 rounded-l;
+	}
+
+	button {
+		@apply flex-grow-0 rounded-r-md rounded-l-none py-2 my-0
+        font-bold ml-0
+        from-cyan-300 to-cyan-400
+		  hover:from-cyan-400 hover:to-cyan-500
+		 active:from-cyan-500 active:to-cyan-600;
+	}
+</style>
