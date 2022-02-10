@@ -183,11 +183,11 @@
 			<TikTokPreview src={tiktokURL} />
 		</div>
 	</SocialBox> -->
-	<SocialBox first={'right'}>
-		<span class="border shadow-sm rounded-lg overflow-hidden" slot="left">
+	<SocialBox first={'left'}>
+		<span class="border shadow-sm rounded-lg overflow-hidden" slot="right">
 			<InstagramPreview />
 		</span>
-		<div class="flex fill-fuchsia-500 text-fuchsia-500 items-center" slot="right">
+		<div class="flex fill-fuchsia-500 text-fuchsia-500 items-center" slot="left">
 			<span class=" mr-4 h-auto" style="width: 120px">
 				<Instagram />
 			</span>

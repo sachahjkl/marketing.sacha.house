@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { t } from '$lib/translations';
+	import LightBulb from '$lib/icons/lightbulb.svg';
 
-	let title : string;
+	let title: string;
 	$: title = $t('strategy.title');
 </script>
 
@@ -9,56 +10,141 @@
 	<title>{title}</title>
 </svelte:head>
 
-<h1>stratégie</h1>
+<div class="banner">
 
-<p>Sujet : seconde main </p>
-<p>I- Strat&eacute;gie marketing</p>
-<p>fiche : <a href="https://www.google.com/url?q=http://kmcms.net/Doc/Experiences/secondhand/&amp;sa=D&amp;source=editors&amp;ust=1644243440587416&amp;usg=AOvVaw1G_pwz6rJARPAShA7gEsDk">http://kmcms.net/Doc/Experiences/secondhand/</a>&nbsp;</p>
-<ol start="1">
-<li>
-<h2>R&eacute;alisation marketing pour amener sur la landingpage</h2>
-</li>
-</ol>
-<p>Public cible</p>
-<p>Nous allons cibler les femmes &acirc;g&eacute;es de 18-75 ans qui habitent en France ou en Tunisie.</p>
-<p>R&eacute;alisation</p>
-<ul>
-<li>R&eacute;seaux : Nous comptons avoir un compte instagram, snapshap, Facebook, Twitter, TikTok, Marmiton et (site sp&eacute;cialis&eacute;). (regarder : statista, social blade). Inciter le electronic word of mouth.</li>
-<li>QR code : Afin d'acqu&eacute;rir un maximum de trafic et de nous faire conna&icirc;tre, nous comptons disposer strat&eacute;giquement des QR code. </li>
-</ul>
-<p>Mode op&eacute;ratoire</p>
-<ul>
-<li>Partager/r&eacute;pondre &agrave; des # pr&eacute;cis avec des images promotionnelles pour le site avec adresse du site. </li>
-<li>Publication r&eacute;guli&egrave;re sur les clients satisfaits, nos promotions, nos avantages.</li>
-<li>Mise en avant sur tous les r&eacute;seaux d&rsquo;une vid&eacute;o r&eacute;action : &ldquo;Wow, je viens de rep &agrave; ce questionnaire en m&ecirc;me pas 5 minutes, je vais peut-&ecirc;tre gagner 30e !&rdquo;</li>
-</ul>
-<ul>
-<li>QR code classique qui, une fois scann&eacute;, am&egrave;nera vers notre landing page. </li>
-<li>QR code complexe, qui une fois scann&eacute;, permettra d&rsquo;avoir divers avantages (r&eacute;duction, des prix, etc.)</li>
-</ul>
-<ol start="2">
-<li>
-<h2>Contenu de la landingpage</h2>
-</li>
-</ol>
-<p>R&eacute;alisation</p>
-<ul>
-<li>Pr&eacute;sentation du projet de seconde main</li>
-<li>Inciter le client &agrave; s&rsquo;inscrire au formulaire</li>
-</ul>
-<p>Mode op&eacute;ratoire</p>
-<ul>
-<li>Phrase d&rsquo;accroche</li>
-<li>Nombre de client d&eacute;j&agrave; inscrit</li>
-<li>Compteur avant la fin de l&rsquo;&eacute;v&eacute;nement</li>
-<li>R&eacute;action/avis des clients sur les r&eacute;seaux (instagram, twitter, etc.)</li>
-<li>Calendrier des &eacute;v&eacute;nements / annonces</li>
-<li>Ce qu&rsquo;on propose</li>
-<li>Nos partenaires =&gt; (trouver et changer les logos)<hr /></li>
-<li>R&eacute;action des professionnels</li>
-<li>Initiative humanitaire (UNICEF)</li>
-<li>FAQ</li>
-<li>Nous contacter (chatbot)</li>
-<li>Lien vers le formulaire</li>
-<li>Newsletter</li>
-</ul>
+</div>
+
+<section class="prose">
+	<h1 id="stratégie-marketing">Stratégie marketing</h1>
+	<h2 id="notre-objectif">Notre objectif</h2>
+	<p>Faire compléter l’enquête par les visiteurs en faisant GAGNEZ UN BON D’AMAZON DE 30€.</p>
+	<h2 id="nos-kpi">Nos KPI</h2>
+	<p>Créer du trafic vers la page d’enquête et obtenir 100 enquêtes complétées.</p>
+	<h2 id="notre-stratégie-de-design">Notre stratégie de design</h2>
+	<p>
+		Notre stratégie va s’orienté sur l’expérience utilisateur et le “webflow”, pour cela nous avons
+		mis l’accent sur la police d’écriture les couleurs de la police et du site web le contenue du
+		bouton “call-to-action”, la mise en avant des réseaux sociaux.
+	</p>
+	<h2 id="forces-et-faiblesses">Forces et faiblesses</h2>
+	<p>Faiblesses :</p>
+	<ul>
+		<li>Pas de budget de publicité</li>
+		<li>Pas de mailing list pertinente</li>
+	</ul>
+	<p>Force :</p>
+	<ul>
+		<li>Notre approche</li>
+		<li>Notre stratégie</li>
+	</ul>
+	<h1 id="réalisation-marketing-pour-amener-sur-la-landing-page">
+		Réalisation marketing pour amener sur la landing-page
+	</h1>
+
+	<section class="bulb">
+		<span class="icon">
+			<LightBulb />
+		</span>
+
+		<div>
+			<h2 id="public-cible">Public cible</h2>
+			<p>
+				Grâce à statista nous avons pu identifier que le public le plus intéressépar la seconde main
+				sont les femmes âgées de 18 à 75 ans qui habitent en France ou en Tunisie.
+			</p>
+		</div>
+	</section>
+	<section class="bulb">
+		<span class="icon">
+			<LightBulb />
+		</span>
+
+		<div>
+			<h2 id="réalisation">Réalisation</h2>
+			<p>
+				En ce qui concerne les réseaux nous comptons avoir un compte Instagram, Twitter, TikTok.
+				Instagram nous permettra de diffuser des postes jolies avec des objets de seconde main.
+				Twitter nous permettra d’être présent dans l’actualité, l’objectif est de commenter sur les
+				personnes influente du milieu de seconde main. Pour TikTok l’objectif est de réaliser des
+				vidéos marrantes sur la seconde main. D’un point de vue macro le but est d’inciter le
+				electronic word of mouth et d’amener sur notre landingpage.
+			</p>
+		</div>
+	</section>
+	<h1 id="contenu-de-la-landing-page">Contenu de la landing page</h1>
+	<section class="bulb">
+		<span class="icon">
+			<LightBulb />
+		</span>
+
+		<div>
+			<h2 id="réalisation-1">Réalisation</h2>
+			<p>Présentation de l’étude et du formulaire. Inciter le client à s’inscrire au formulaire</p>
+		</div>
+	</section>
+	<section class="bulb mb-20">
+		<span class="icon">
+			<LightBulb />
+		</span>
+
+		<div>
+			<h2 id="mode-opératoire">Mode opératoire</h2>
+			<p>
+				Pour réaliser notre objectif nous allons mettre en place une phrase d’accroche, un compteur
+				de nombre de client déjà inscrit, un compteur avant la fin de l’événement, des
+				réactions/avis des clients sur les réseaux (instagram, twitter, etc.), un chatbot, un lien
+				vers le formulaire et newsl etter.
+			</p>
+		</div>
+	</section>
+</section>
+
+<style lang="postcss">
+	h1,
+	h2 {
+		@apply font-bold;
+	}
+
+	h1 {
+		@apply text-center text-3xl my-8;
+	}
+
+	.prose {
+		@apply max-w-prose mx-auto;
+	}
+
+	h2 {
+		@apply font-bold text-xl mb-1  drop-shadow-sm;
+	}
+
+	p {
+		@apply mb-4;
+	}
+
+	ul {
+		@apply ml-8 mb-3;
+	}
+
+	li::before {
+		content: '-';
+		@apply mr-2;
+	}
+
+	.bulb {
+		@apply flex;
+	}
+
+	.bulb div {
+		@apply flex-auto content-start items-start;
+	}
+
+	.icon {
+		@apply p-2 shadow-sm flex-grow-0 aspect-square mx-5
+		bg-gray-300 rounded-full h-fit ;
+	}
+
+	.banner {
+		background-image: url(/img/vêtements_0.jpg);
+		@apply h-60 border-2 shadow-sm bg-center rounded;
+	}
+</style>
