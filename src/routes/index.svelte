@@ -75,7 +75,6 @@
 			<a
 				target="_blank"
 				class="hidden"
-				rel="noreferrer"
 				href={sondageURL}
 				bind:this={sondageAnchor}
 			>
