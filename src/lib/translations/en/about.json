@@ -1,3 +1,11 @@
 {
-	"title": "Take the survey ! - About"
+	"title": "Take the survey ! - About",
+	"heading": "About us",
+	"sacha-desc": "Webmaster",
+	"siva-desc": "Social Network Expert",
+	"romain-desc": "Head Writer",
+	"heading2": "A few words about us ...",
+	"p1": "We are 3 <b>computer science engineering</b> students.",
+	"p2": "L'objectif de ce site et de ses réseaux sociaux est de démontrer des techniques marketing pour encourager/inciter un public cible à participer à un sondage concernant les <b><i>vétements de seconde main</i></b>. Nous avons donc élaboré cette landing page dont nous avons détayé les objectifs dans notre page",
+	"strategy": "strategy"
 }
