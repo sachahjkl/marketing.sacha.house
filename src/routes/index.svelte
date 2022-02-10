@@ -151,7 +151,7 @@
 <div class="socials">
 	<SocialBox first={'right'}>
 		<div slot="left">
-			<!-- <TwitterPreview user="dojaCat" /> -->
+			<TwitterPreview user="marketinghjkl" />
 		</div>
 
 		<div class="flex fill-blue-500 text-blue-500 items-center" slot="right">
@@ -168,7 +168,7 @@
 		</div>
 	</SocialBox>
 
-	<SocialBox first={'left'}>
+	<!-- <SocialBox first={'left'}>
 		<div class="flex fill-pink-500 text-pink-500 items-center" slot="left">
 			<span class=" mr-4 h-auto" style="width: 120px">
 				<TikTok />
@@ -182,10 +182,10 @@
 		<div slot="right">
 			<TikTokPreview src={tiktokURL} />
 		</div>
-	</SocialBox>
+	</SocialBox> -->
 	<SocialBox first={'right'}>
 		<span class="border shadow-sm rounded-lg overflow-hidden" slot="left">
-			<!-- <InstagramPreview /> -->
+			<InstagramPreview />
 		</span>
 		<div class="flex fill-fuchsia-500 text-fuchsia-500 items-center" slot="right">
 			<span class=" mr-4 h-auto" style="width: 120px">
