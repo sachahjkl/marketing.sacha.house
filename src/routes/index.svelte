@@ -27,7 +27,7 @@
 
 	let sondageAnchor: HTMLAnchorElement;
 
-	let participantsPromise = countapi.get('marketing.hjkl.it', 'participants');
+	let participantsPromise = countapi.get('marketing.hjkl.it', 'participants_v2');
 
 	const values = tweened(0, {
 		duration: 1800,
@@ -40,7 +40,7 @@
 
 	async function clickCallback() {
 		try {
-			const { value } = await countapi.hit('marketing.hjkl.it', 'participants');
+			const { value } = await countapi.hit('marketing.hjkl.it', 'participants_v2');
 			$values = value;
 			setTimeout(() => sondageAnchor.click(), DURATION - 300);
 		} catch (error) {
