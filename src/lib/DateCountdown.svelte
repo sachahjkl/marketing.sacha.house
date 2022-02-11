@@ -34,7 +34,7 @@
 				.map(() => '8')
 				.join('')}
 		</span>
-		{duration.days.toLocaleString('fr-FR', {
+		{duration.day.toLocaleString('fr-FR', {
 			minimumIntegerDigits: 3
 		})}
 		{$t('index.days')}
