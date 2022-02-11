@@ -43,4 +43,4 @@ export const twitterAccountURL = 'https://twitter.com/marketinghjkl';
 export const tiktokAccountURL = 'https://www.tiktok.com/@dojacat?lang=fr';
 export const instagramAccountURL = 'https://www.instagram.com/marketing.hjkl.it/';
 
-export const countdownDate = new Date(2022, 4, 12, 0, 0, 0, 0);
+export const countdownDate = new Date(2022, 2, 12, 0, 0, 0, 0);
