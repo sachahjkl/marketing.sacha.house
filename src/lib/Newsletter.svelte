@@ -23,32 +23,31 @@
 	.letter {
 		background-image: repeating-linear-gradient(
 			135deg,
-			#f29b91 0px,
-			#f09290 30px,
+			#ff5542 0px,
+			#ff5542 30px,
 			transparent 30px,
 			transparent 50px,
-			#83b3db 50px,
-			#84adcb 80px,
+			#4eafff 50px,
+			#4eafff 80px,
 			transparent 80px,
 			transparent 100px
 		);
-        /* animation: slide 60s infinite running linear; */
+		/* animation: slide 60s infinite running linear; */
 		/* transition: background-position 200ms ease-in; */
 		@apply p-3 rounded-lg shadow-sm border;
 	}
 
-    @keyframes slide {
-        from {
-            background-position: 0px 0;
-        }
+	@keyframes slide {
+		from {
+			background-position: 0px 0;
+		}
 
-        to {
-            background-position: 280px 0;
-        }
-    }
+		to {
+			background-position: 280px 0;
+		}
+	}
 
 	.letter:hover {
-
 		/* background-image: repeating-linear-gradient(
 			135deg,
 			#83b3db 0px,
@@ -69,16 +68,16 @@
 
 	input {
 		@apply flex-auto border px-3 py-2 rounded-l;
-        /* max-width: 30ch; */
-        min-width: 10ch;
+		/* max-width: 30ch; */
+		min-width: 10ch;
 	}
 
 	button {
-		@apply  rounded-r-md rounded-l-none py-2 my-0
+		@apply rounded-r-md rounded-l-none py-2 my-0
         font-bold ml-0
-        from-cyan-300 to-cyan-400
-		  hover:from-cyan-400 hover:to-cyan-500
-		 active:from-cyan-500 active:to-cyan-600;
-         min-width: 12ch;
+        from-blue-500 to-blue-600
+		  hover:from-blue-600 hover:to-blue-700
+		 active:from-blue-700 active:to-blue-800;
+		min-width: 12ch;
 	}
 </style>

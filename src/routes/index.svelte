@@ -141,7 +141,7 @@
 	<div class="mt-6">
 		<Newsletter />
 	</div>
-	<p class="text-center mt-4">{$t('index.join-newsletter')} 💌</p>
+	<p class="text-center mt-4 font-bold">{$t('index.join-newsletter')} 💌</p>
 </section>
 
 <hr class="my-12" />
