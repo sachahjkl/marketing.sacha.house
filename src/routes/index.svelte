@@ -207,7 +207,7 @@
 	}
 
 	.hero hgroup {
-		@apply max-w-prose mt-24 text-center;
+		@apply max-w-prose mt-16 text-center;
 	}
 
 	.hero em {
