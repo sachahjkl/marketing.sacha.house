@@ -16,7 +16,7 @@ pages:
   script:
     - npm install
     - npm run build
-    - cp build public
+    - cp -rf build public
   artifacts:
     paths:
       - build
