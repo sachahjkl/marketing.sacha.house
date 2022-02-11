@@ -9,6 +9,7 @@
 		date.setFullYear(from.getFullYear() + 1);
 		return date;
 	})();
+	export let clickCallback = () => {};
 
 	let text: HTMLSpanElement;
 	let characters: number = 20;
@@ -26,7 +27,7 @@
 	});
 </script>
 
-<time>
+<time on:click={clickCallback}>
 	<span class="text" bind:this={text}>
 		<span class="char-grid">
 			{Array.from(Array(characters - 1))

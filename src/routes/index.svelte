@@ -61,42 +61,40 @@
 		</h1>
 
 		<h2>{$t('index.sub')}</h2>
-
-		<div class="cta mt-12">
-			<ParticipateButton {clickCallback}>
-				{#await participantsPromise}
-					<span class="animate-pulse">⌛</span> {$t('index.participants-loading')}
-				{:then { }}
-					📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
-				{:catch _error}
-					💣 {$t('index.participants-error')}
-				{/await}
-			</ParticipateButton>
-			<a
-				target="_blank"
-				class="hidden"
-				href={sondageURL}
-				bind:this={sondageAnchor}
-			>
-				out
-			</a>
-		</div>
 	</hgroup>
-	<img src="/img/design.png" class="block m-4 mx-auto max-w-sm" alt="Design" />
+	<div class="cta mt-8 w-full">
+		<ParticipateButton {clickCallback}>
+			{#await participantsPromise}
+				<span class="animate-pulse">⌛</span> {$t('index.participants-loading')}
+			{:then { }}
+				📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
+			{:catch _error}
+				💣 {$t('index.participants-error')}
+			{/await}
+		</ParticipateButton>
+		<a target="_blank" class="hidden" href={sondageURL} bind:this={sondageAnchor}> out </a>
+	</div>
+	<img
+		src="/img/design.png"
+		on:click={() => sondageAnchor.click()}
+		class="block cursor-pointer m-4 mx-auto max-w-sm"
+		alt="Design"
+	/>
 	<!-- <Logo/> -->
 	<!-- <div class="shopping">
 		<ShoppingCart />
 	</div> -->
 </section>
 
-<hr class="my-8" />
+<hr class="my-12" />
 
 <section class="prose">
 	<h2>🤑 {$t('index.giftcard-title')}</h2>
 
 	<div class="flex flex-row flex-wrap items-center mt-3">
 		<img
-			class="max-h-20 mx-4 rounded border shadow-sm mt-4 animate-bounce"
+			class="max-h-20 mx-4 rounded cursor-pointer border shadow-sm mt-4 animate-bounce"
+			on:click={() => sondageAnchor.click()}
 			src="/img/amazon-card.png"
 			alt="Vêtements vracs"
 		/>
@@ -106,13 +104,13 @@
 	</div>
 </section>
 
-<hr class="my-8" />
+<hr class="my-12" />
 
 <section class="prose">
 	<h2>🕰️ {$t('index.time-limited-offer-title')}</h2>
 
 	<div class="my-4 mx-auto w-fit">
-		<DateCountdown to={countdownDate} />
+		<DateCountdown clickCallback={() => sondageAnchor.click()} to={countdownDate} />
 	</div>
 
 	<p>
@@ -120,7 +118,7 @@
 	</p>
 </section>
 
-<hr class="my-8" />
+<hr class="my-12" />
 
 <section class="prose">
 	<h2>📢 {$t('index.join-socials')} ...</h2>
@@ -146,7 +144,7 @@
 	<p class="text-center mt-4">{$t('index.join-newsletter')} 💌</p>
 </section>
 
-<hr class="my-8" />
+<hr class="my-12" />
 
 <div class="socials">
 	<SocialBox first={'right'}>
@@ -205,11 +203,11 @@
 </section> -->
 <style lang="postcss">
 	.hero {
-		@apply mb-3 mt-3 mx-2 flex flex-row flex-wrap justify-center items-center;
+		@apply my-3 mx-2 flex flex-row flex-wrap justify-center items-center;
 	}
 
 	.hero hgroup {
-		@apply max-w-prose pt-8 my-8 text-center;
+		@apply max-w-prose mt-24 text-center;
 	}
 
 	.hero em {

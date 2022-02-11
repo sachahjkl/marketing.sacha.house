@@ -53,9 +53,11 @@
 			{@html $t('about.p1')}
 		</p>
 		<p>
-			{@html $t('about.p2')} <a class="text-blue-600 underline 	 hover:text-blue-800" href="/strategy">{$t("about.strategy")}</a>
+			{@html $t('about.p2')}
+			<a class="text-blue-600 underline hover:text-blue-800" href="/strategy">
+				{$t('about.strategy')}
+			</a>.
 		</p>
-		<a class="hidden" aria-disabled="true" href="/">none</a>
 	</div>
 	<!-- <ShoppingCart /> -->
 </section>
