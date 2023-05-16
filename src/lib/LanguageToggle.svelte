@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { _ } from 'svelte-i18n';
 
-	import { t, locale } from './translations';
-	import lang from './translations/lang.json';
+	import { locale, locales } from 'svelte-i18n';
+	import lang from './i18n/lang.json';
 
 	export let checked: boolean = $locale === 'en';
 
@@ -10,7 +11,7 @@
 	$: $locale = checked ? 'en' : 'fr';
 </script>
 
-<section title={$t('menu.select-lang')}>
+<section title={$_('menu.select-lang')}>
 	<span title={lang.fr.full} class="mr-1 drop-shadow-sm">{lang.fr.flag}</span>
 	<label style="--switch-color: {color}" class="switch">
 		<input type="checkbox" bind:checked />

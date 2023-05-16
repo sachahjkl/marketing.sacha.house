@@ -14,7 +14,7 @@ export function typewriter(
 	if (!valid) {
 		throw new Error(`This transition only works on elements with a single text node child`);
 	}
-	const text = node.textContent;
+	const text = node.textContent || "";
 	const duration = text.length * speed;
 
 	return {

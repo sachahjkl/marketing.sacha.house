@@ -1,30 +1,56 @@
-/// <reference types="@sveltejs/kit" />
-
-declare module '*.svg' {
-	import type { SvelteComponent } from 'svelte';
-	const content: SvelteComponent;
-	export default content;
+// See https://kit.svelte.dev/docs/types#app
+// for information about these interfaces
+declare global {
+	namespace App {
+		// interface Error {}
+		// interface Locals {}
+		// interface PageData {}
+		// interface Platform {}
+	}
 }
 
 declare module '*.svg?component' {
-	import type { SvelteComponent } from 'svelte';
-	const content: SvelteComponent;
-	export default content;
+	import type { ComponentType, SvelteComponentTyped } from 'svelte'
+	import type { SVGAttributes } from 'svelte/elements'
+
+	const content: ComponentType<
+		SvelteComponentTyped<SVGAttributes<SVGSVGElement>>
+	>
+
+	export default content
 }
 
 declare module '*.svg?src' {
-	const content: string;
-	export default content;
+	const content: string
+	export default content
 }
 
 declare module '*.svg?url' {
-	const content: string;
-	export default content;
+	const content: string
+	export default content
+}
+
+declare module '*.svg?dataurl' {
+	const content: string
+	export default content
+}
+
+declare module '*.svg?dataurl=base64' {
+	const content: string
+	export default content
+}
+
+declare module '*.svg?dataurl=enc' {
+	const content: string
+	export default content
+}
+
+declare module '*.svg?dataurl=unenc' {
+	const content: string
+	export default content
 }
 
 declare module 'duration' {
-	// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-
 	export default class Duration {
 		constructor(from: Date): Duration;
 		constructor(from: Date, to: Date): Duration;
@@ -132,3 +158,4 @@ declare module 'duration' {
 		toString(format: string): string;
 	}
 }
+

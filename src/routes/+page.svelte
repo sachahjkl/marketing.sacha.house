@@ -3,11 +3,11 @@
 	import ParticipateButton, { DURATION } from '$lib/ParticipateButton.svelte';
 	import SocialBox from '$lib/SocialBox.svelte';
 	import SocialButton from '$lib/SocialButton.svelte';
-	import { t } from '$lib/translations';
+	import { _ } from 'svelte-i18n';
 
-	import Twitter from '$lib/icons/socials/twitter.svg';
-	import TikTok from '$lib/icons/socials/tiktok.svg';
-	import Instagram from '$lib/icons/socials/instagram.svg';
+	import Twitter from '$lib/icons/socials/twitter.svg?component';
+	import TikTok from '$lib/icons/socials/tiktok.svg?component';
+	import Instagram from '$lib/icons/socials/instagram.svg?component';
 	import {
 		countdownDate,
 		instagramAccountURL,
@@ -27,7 +27,10 @@
 
 	let sondageAnchor: HTMLAnchorElement;
 
-	let participantsPromise = countapi.get('marketing.hjkl.it', 'participants_v2');
+	export let data;
+
+	// let participantsPromise = countapi.get('marketing.hjkl.it', 'participants_v2');
+	let participantsPromise = data.streaming.participants;
 
 	const values = tweened(0, {
 		duration: 1800,
@@ -36,7 +39,7 @@
 	participantsPromise.then(({ value }) => setTimeout(() => ($values = value), 100));
 
 	let title: string;
-	$: title = $t('index.title');
+	$: title = $_('index.title');
 
 	async function clickCallback() {
 		try {
@@ -57,26 +60,29 @@
 <section id="hero" class="hero">
 	<hgroup>
 		<h1>
-			👗 {$t('index.hero-p1')} <br /><em>{$t('index.hero-p2')}</em>
+			👗 {$_('index.hero-p1')} <br /><em>{$_('index.hero-p2')}</em>
 		</h1>
 
-		<h2>{$t('index.sub')}</h2>
+		<h2>{$_('index.sub')}</h2>
 	</hgroup>
 	<div class="cta mt-8 w-full">
 		<ParticipateButton {clickCallback}>
 			{#await participantsPromise}
-				<span class="animate-pulse">⌛</span> {$t('index.participants-loading')}
+				<span class="animate-pulse">⌛</span> {$_('index.participants-loading')}
 			{:then { }}
-				📊 {$t('index.participants-btn', { participants: Math.ceil($values) })}
+				📊 {$_('index.participants-btn', {
+					values: { participants: Math.ceil($values) || 0 }
+				})}
 			{:catch _error}
-				💣 {$t('index.participants-error')}
+				💣 {$_('index.participants-error')}
 			{/await}
 		</ParticipateButton>
 		<a target="_blank" class="hidden" href={sondageURL} bind:this={sondageAnchor}> out </a>
 	</div>
 	<img
 		src="/img/design.png"
-		on:click={() => sondageAnchor.click()}
+		on:click={sondageAnchor.click}
+		on:keypress={sondageAnchor.click}
 		class="block cursor-pointer m-4 mx-auto max-w-sm"
 		alt="Design"
 	/>
@@ -89,17 +95,18 @@
 <hr class="my-12" />
 
 <section class="prose">
-	<h2>🤑 {$t('index.giftcard-title')}</h2>
+	<h2>🤑 {$_('index.giftcard-title')}</h2>
 
 	<div class="flex flex-row flex-wrap items-center mt-3">
 		<img
 			class="max-h-20 mx-4 rounded cursor-pointer border shadow-sm mt-4 animate-bounce"
-			on:click={() => sondageAnchor.click()}
+			on:click={sondageAnchor.click}
+			on:keypress={sondageAnchor.click}
 			src="/img/amazon-card.png"
 			alt="Vêtements vracs"
 		/>
 		<p class="flex-1">
-			{$t('index.giftcard-p1')}
+			{$_('index.giftcard-p1')}
 		</p>
 	</div>
 </section>
@@ -107,21 +114,21 @@
 <hr class="my-12" />
 
 <section class="prose">
-	<h2>🕰️ {$t('index.time-limited-offer-title')}</h2>
+	<h2>🕰️ {$_('index.time-limited-offer-title')}</h2>
 
 	<div class="my-4 mx-auto w-fit">
 		<DateCountdown clickCallback={() => sondageAnchor.click()} to={countdownDate} />
 	</div>
 
 	<p>
-		{@html $t('index.time-limited-offer-p1')}
+		{@html $_('index.time-limited-offer-p1')}
 	</p>
 </section>
 
 <hr class="my-12" />
 
 <section class="prose">
-	<h2>📢 {$t('index.join-socials')} ...</h2>
+	<h2>📢 {$_('index.join-socials')} ...</h2>
 	<div class="flex flex-wrap justify-center my-2 mt-4">
 		<SocialButton text={'Twitter'} site={'twitter'} href={twitterAccountURL}>
 			<Twitter slot="logo" />
@@ -136,12 +143,12 @@
 
 	<img src="/img/petal.png" class=" w-10 rotate-12 mx-auto mt-4 translate-x-4" alt="petal" />
 	<img src="/img/petal.png" class=" w-10 -rotate-45 mx-auto mt-3 -translate-x-6" alt="petal" />
-	<img src="/img/petal.png" class=" w-10 rotate-45 mx-auto mt-6 translate-x-1 " alt="petal" />
+	<img src="/img/petal.png" class=" w-10 rotate-45 mx-auto mt-6 translate-x-1" alt="petal" />
 
 	<div class="mt-6">
 		<Newsletter />
 	</div>
-	<p class="text-center mt-4 font-bold">{$t('index.join-newsletter')} 💌</p>
+	<p class="text-center mt-4 font-bold">{$_('index.join-newsletter')} 💌</p>
 </section>
 
 <hr class="my-12" />
@@ -158,29 +165,29 @@
 			</span>
 
 			<hgroup>
-				<h1 class="text-4xl font-bold decoration-slice">{$t('index.twitter-hero')}</h1>
+				<h1 class="text-4xl font-bold decoration-slice">{$_('index.twitter-hero')}</h1>
 				<h2 class="text-xl">
-					{$t('index.twitter-sub')}
+					{$_('index.twitter-sub')}
 				</h2>
 			</hgroup>
 		</div>
 	</SocialBox>
 
-	<!-- <SocialBox first={'left'}>
+	<SocialBox first={'left'}>
 		<div class="flex fill-pink-500 text-pink-500 items-center" slot="left">
 			<span class=" mr-4 h-auto" style="width: 120px">
 				<TikTok />
 			</span>
 
 			<hgroup>
-				<h1 class="text-4xl font-bold decoration-slice">{$t('index.tiktok-hero')}</h1>
-				<h2 class="text-xl">{$t('index.tiktok-sub')}</h2>
+				<h1 class="text-4xl font-bold decoration-slice">{$_('index.tiktok-hero')}</h1>
+				<h2 class="text-xl">{$_('index.tiktok-sub')}</h2>
 			</hgroup>
 		</div>
 		<div slot="right">
 			<TikTokPreview src={tiktokURL} />
 		</div>
-	</SocialBox> -->
+	</SocialBox>
 	<SocialBox first={'left'}>
 		<span class="border shadow-sm rounded-lg overflow-hidden" slot="right">
 			<InstagramPreview />
@@ -191,8 +198,8 @@
 			</span>
 
 			<hgroup>
-				<h1 class="text-4xl font-bold decoration-slice">{$t('index.instagram-hero')}</h1>
-				<h2 class="text-xl">{$t('index.instagram-sub')}</h2>
+				<h1 class="text-4xl font-bold decoration-slice">{$_('index.instagram-hero')}</h1>
+				<h2 class="text-xl">{$_('index.instagram-sub')}</h2>
 			</hgroup>
 		</div>
 	</SocialBox>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { t } from './translations';
+	import { _ } from 'svelte-i18n';
 
 	export let action = 'https://tinyletter.com/marketinghjkl';
 </script>
@@ -15,7 +15,7 @@
 		}}
 	>
 		<input type="email" name="email" id="tlemail" placeholder="Email..." />
-		<button class="button" type="submit"> {$t('index.subscribe')} 📬</button>
+		<button class="button" type="submit"> {$_('index.subscribe')} 📬</button>
 	</form>
 </div>
 

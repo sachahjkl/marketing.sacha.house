@@ -5,7 +5,7 @@
 <script lang="ts">
 	import ConfettiSprayer from './ConfettiSprayer.svelte';
 
-	import Pointer from './icons/cursors/pointer.svg';
+	import Pointer from './icons/cursors/pointer.svg?component';
 
 	export let soundFile = '/click.mp3';
 	export let clickCallback = () => {};

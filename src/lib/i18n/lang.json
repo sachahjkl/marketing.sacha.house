@@ -1,0 +1,12 @@
+{
+	"en": {
+		"flag": "🇬🇧",
+		"full": "English",
+		"code" : "en"
+	},
+	"fr": {
+		"flag": "🇫🇷",
+		"full": "Français",
+		"code" : "fr"
+	}
+}

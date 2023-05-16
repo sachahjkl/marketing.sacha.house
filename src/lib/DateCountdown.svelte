@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Duration from 'duration';
 	import { onMount } from 'svelte';
-	import { t } from './translations';
+	import { _ } from 'svelte-i18n';
 
 	export let from = new Date();
 	export let to = (() => {
@@ -13,7 +13,7 @@
 
 	let text: HTMLSpanElement;
 	let characters: number = 20;
-	$: characters = text?.textContent.length || 1;
+	$: characters = text?.textContent?.length || 1;
 
 	const INTERVAL = 1000;
 
@@ -27,7 +27,7 @@
 	});
 </script>
 
-<time on:click={clickCallback}>
+<time on:click={clickCallback} on:keypress={clickCallback}>
 	<span class="text" bind:this={text}>
 		<span class="char-grid">
 			{Array.from(Array(characters - 1))
@@ -37,8 +37,8 @@
 		{duration.day.toLocaleString('fr-FR', {
 			minimumIntegerDigits: 3
 		})}
-		{$t('index.days')}
-		{$t('index.and')}
+		{$_('index.days')}
+		{$_('index.and')}
 		{duration.hour.toLocaleString('fr-FR', {
 			minimumIntegerDigits: 2
 		})}:{duration.minute.toLocaleString('fr-FR', {
@@ -48,7 +48,7 @@
 				minimumIntegerDigits: 2
 			})
 		)}
-		<!-- {$t('index.remaining')} -->
+		<!-- {$_('index.remaining')} -->
 	</span>
 </time>
 

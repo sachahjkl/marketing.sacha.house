@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { t } from '$lib/translations';
-	import LightBulb from '$lib/icons/lightbulb.svg';
+	import { _ } from 'svelte-i18n';
+	import LightBulb from '$lib/icons/lightbulb.svg?component';
 
 	let title: string;
-	$: title = $t('strategy.title');
+	$: title = $_('strategy.title');
 </script>
 
 <svelte:head>
@@ -452,7 +452,7 @@
 		line-height: 10px;
 		padding: 3px 5px;
 		vertical-align: middle;
-		@apply mx-2
+		@apply mx-2;
 	}
 
 	.color {

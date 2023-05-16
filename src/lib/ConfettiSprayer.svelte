@@ -11,27 +11,28 @@
 	const PARTICLE_COUNT = 150;
 	const DURATION = 3500;
 	const COLORS = ['#FFC700', '#FF0000', '#2E3191', '#41BBC7'];
-	const createParticles = (count, colors) => {
+	const createParticles = (count: number, colors: string[]) => {
 		const increment = 360 / count;
 		return Array.from({ length: count }, (_, i) => ({
 			color: colors[i % colors.length],
 			degree: i * increment
 		}));
 	};
-	const waitFor = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+	const waitFor = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 	// From here: https://stackoverflow.com/a/11832950
-	function round(num, precision = 2) {
+	function round(num: number, precision = 2) {
 		return Math.round((num + Number.EPSILON) * 10 ** precision) / 10 ** precision;
 	}
-	function arraysEqual(a, b) {
+	function arraysEqual(a: unknown[], b: unknown[]) {
 		if (a === b) return true;
 		if (a == null || b == null) return false;
 		if (a.length !== b.length) return false;
 		for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
 		return true;
 	}
-	const mapRange = (value, x1, y1, x2, y2) => ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
-	const rotate = (degree, amount) => {
+	const mapRange = (value: number, x1: number, y1: number, x2: number, y2: number) =>
+		((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
+	const rotate = (degree: number, amount: number) => {
 		const result = degree + amount;
 		return result > 360 ? result - 360 : result;
 	};
@@ -48,21 +49,21 @@
 		[0, 1, 0],
 		zAxisRotation
 	];
-	const shouldBeCircle = (rotationIndex) =>
+	const shouldBeCircle = (rotationIndex: number) =>
 		!arraysEqual(rotationTransforms[rotationIndex], zAxisRotation) && coinFlip();
-	const isUndefined = (value) => typeof value === 'undefined';
-	const error = (message) => {
+	const isUndefined = (value: unknown) => typeof value === 'undefined';
+	const error = (message: unknown) => {
 		console.error(message);
 	};
 	function validate(
-		particleCount,
-		duration,
-		colors,
-		particleSize,
-		force,
-		stageHeight,
-		stageWidth,
-		particlesShape
+		particleCount: number,
+		duration: number,
+		colors: string[],
+		particleSize: number,
+		force: number,
+		stageHeight: number,
+		stageWidth: number,
+		particlesShape: string
 	) {
 		const isSafeInteger = Number.isSafeInteger;
 		if (!isUndefined(particleCount) && isSafeInteger(particleCount) && particleCount < 0) {
@@ -259,7 +260,7 @@
 			isVisible = false;
 		}
 	});
-	function confettiStyles(node, { degree }) {
+	function confettiStyles(node: HTMLElement, { degree }: { degree: number }) {
 		// Get x landing point for it
 		const landingPoint = mapRange(
 			Math.abs(rotate(degree, 90) - 180),
@@ -290,7 +291,7 @@
 		const y3 = BEZIER_MEDIAN;
 		// roughly the ease of free-fall
 		const y4 = round(Math.max(mapRange(Math.abs(degree - 180), 0, 180, force, -force), 0), 4);
-		const setCSSVar = (key, val) => node.style.setProperty(key, val + '');
+		const setCSSVar = (key: string, val: string) => node.style.setProperty(key, val + '');
 		setCSSVar('--x-landing-point', `${landingPoint}px`);
 		setCSSVar('--duration-chaos', `${durationChaos}ms`);
 		setCSSVar('--x1', `${x1}`);
