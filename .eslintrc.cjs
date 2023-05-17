@@ -26,7 +26,7 @@ module.exports = {
 				parser: '@typescript-eslint/parser'
 			},
 			rules: {
-				"svelte/no-at-html-tags": "ignore"
+				'svelte/no-at-html-tags': 'ignore'
 			}
 		}
 	]
