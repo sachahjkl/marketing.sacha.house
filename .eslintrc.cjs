@@ -26,7 +26,16 @@ module.exports = {
 				parser: '@typescript-eslint/parser'
 			},
 			rules: {
-				'svelte/no-at-html-tags': 'ignore'
+				'svelte/no-at-html-tags': 0,
+				'no-unused-vars': 'off',
+				'@typescript-eslint/no-unused-vars': [
+					'warn', // or "error"
+					{
+						argsIgnorePattern: '^_',
+						varsIgnorePattern: '^_',
+						caughtErrorsIgnorePattern: '^_'
+					}
+				]
 			}
 		}
 	]
