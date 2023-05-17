@@ -3,6 +3,7 @@
 	import Logo from '$lib/Logo.svelte';
 	import ShoppingCartScene from '$lib/ShoppingCartScene.svelte';
 	import { Canvas } from '@threlte/core';
+	import { WebGLRenderer } from 'three';
 
 	let title: string;
 	$: title = $_('about.title');
@@ -16,7 +17,12 @@
 	<h1 class="font-bold text-3xl">{$_('about.heading')}</h1>
 
 	<div class="scene">
-		<Canvas shadows>
+		<Canvas
+			shadows
+			rendererParameters={{
+				antialias: true
+			}}
+		>
 			<ShoppingCartScene />
 		</Canvas>
 	</div>
