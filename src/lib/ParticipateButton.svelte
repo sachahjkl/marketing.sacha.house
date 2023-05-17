@@ -8,7 +8,7 @@
 	import Pointer from './icons/cursors/pointer.svg?component';
 
 	export let soundFile = '/click.mp3';
-	export let clickCallback = () => {};
+	export let clickCallback = () => console.info('Implement yourself !');
 
 	let confettiTime = false;
 	let clickAudio: HTMLAudioElement;

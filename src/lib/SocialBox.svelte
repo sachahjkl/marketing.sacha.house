@@ -35,23 +35,22 @@
 		@apply ml-8;
 	}
 
-
 	@media screen and (max-width: 768px) {
-        .social-box {
-            @apply flex-wrap ;
+		.social-box {
+			@apply flex-wrap;
 		}
 
-        :global(.social-box:first-child){
-            @apply pb-8;
-        }
+		:global(.social-box:first-child) {
+			@apply pb-8;
+		}
 
-        :global(.social-box:last-child){
-            @apply pt-8;
-        }
+		:global(.social-box:last-child) {
+			@apply pt-8;
+		}
 
-        :global(.social-box:not(:last-child)) {
-            @apply border-b ;
-        }
+		:global(.social-box:not(:last-child)) {
+			@apply border-b;
+		}
 
 		.box.first {
 			order: 0;

@@ -9,10 +9,10 @@
 		date.setFullYear(from.getFullYear() + 1);
 		return date;
 	})();
-	export let clickCallback = () => {};
+	export let clickCallback = () => console.info('Implement yourself !');
 
 	let text: HTMLSpanElement;
-	let characters: number = 20;
+	let characters = 20;
 	$: characters = text?.textContent?.length || 1;
 
 	const INTERVAL = 1000;

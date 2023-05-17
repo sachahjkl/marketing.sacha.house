@@ -48,7 +48,7 @@ body {
 		 from-blue-400 to-blue-500
 		  hover:from-blue-500 hover:to-blue-600
 		 active:from-blue-600 active:to-blue-700 text-white;
-		transition-property: background-image, background , background-color , box-shadow, color;
+		transition-property: background-image, background, background-color, box-shadow, color;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 150ms;
 	}

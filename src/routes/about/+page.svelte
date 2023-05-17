@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import Logo from '$lib/Logo.svelte';
 	import ShoppingCartScene from '$lib/ShoppingCartScene.svelte';
 	import { Canvas } from '@threlte/core';
-	import { WebGLRenderer } from 'three';
 
 	let title: string;
 	$: title = $_('about.title');
@@ -18,7 +16,6 @@
 
 	<div class="scene">
 		<Canvas
-			shadows
 			rendererParameters={{
 				antialias: true
 			}}

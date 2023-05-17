@@ -22,7 +22,6 @@
 	import { cubicOut } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
 	import DateCountdown from '$lib/DateCountdown.svelte';
-	import Logo from '$lib/Logo.svelte';
 	import Newsletter from '$lib/Newsletter.svelte';
 
 	let sondageAnchor: HTMLAnchorElement;

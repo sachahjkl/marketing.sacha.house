@@ -14,7 +14,7 @@
 <style lang="postcss">
 	header {
 		@apply z-50 sticky top-0 bg-white shadow-sm
-		rounded-b-xl p-1 mb-1 border border-t-0 mx-auto justify-between flex items-center ;
+		rounded-b-xl p-1 mb-1 border border-t-0 mx-auto justify-between flex items-center;
 	}
 
 	nav {

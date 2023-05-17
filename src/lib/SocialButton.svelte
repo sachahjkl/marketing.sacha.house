@@ -3,12 +3,12 @@
 
 	export let text: string;
 	export let site: Site;
-	export let href: string = '';
+	export let href = '';
 </script>
 
 <a {href} class="{site} button" rel="noreferrer" target="_blank">
 	<span class="inline-block items-center mr-2 w-6">
-	<slot  name="logo">empty</slot>
+		<slot name="logo">empty</slot>
 	</span>
 	{text}
 </a>
@@ -17,7 +17,6 @@
 	.button {
 		@apply fill-white text-white font-bold flex items-center;
 	}
-
 
 	/* .button img {
 		@apply inline-block w-6 mr-1;

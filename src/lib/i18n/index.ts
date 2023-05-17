@@ -1,6 +1,5 @@
 import lang from './lang.json';
 
-
 // export const config: import('sveltekit-i18n').Config = {
 // 	fallbackLocale: defaultLocale,
 // 	translations: {
@@ -58,15 +57,15 @@ import lang from './lang.json';
 
 // export const { t, loading, locales, locale, loadTranslations } = new i18n(config);
 
-import { browser } from '$app/environment'
-import { init, register } from 'svelte-i18n'
+import { browser } from '$app/environment';
+import { init, register } from 'svelte-i18n';
 
-const defaultLocale = 'fr'
+const defaultLocale = 'fr';
 
-register(lang.en.code, () => import('./locales/en.json'))
-register(lang.fr.code, () => import('./locales/fr.json'))
+register(lang.en.code, () => import('./locales/en.json'));
+register(lang.fr.code, () => import('./locales/fr.json'));
 
 init({
 	fallbackLocale: defaultLocale,
-	initialLocale: browser ? window.navigator.language : defaultLocale,
-})
+	initialLocale: browser ? window.navigator.language : defaultLocale
+});

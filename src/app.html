@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="description"
+			content="👗 Prêts à faire du tri dans vos placards tout en gagnant de l'argent ?"
+		/>
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://marketing.hjkl.it/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Participez au sondage !" />
+		<meta
+			property="og:description"
+			content="👗 Prêts à faire du tri dans vos placards tout en gagnant de l'argent ?"
+		/>
+		<meta property="og:image" content="https://marketing.hjkl.it/img/profile.png" />
 
-<head>
-	<meta charset="utf-8" />
-	<meta name="description" content="👗 Prêts à faire du tri dans vos placards tout en gagnant de l'argent ?">
-	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-	<meta name="viewport" content="width=device-width" />
-	<!-- Facebook Meta Tags -->
-	<meta property="og:url" content="https://marketing.hjkl.it/" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Participez au sondage !" />
-	<meta property="og:description" content="👗 Prêts à faire du tri dans vos placards tout en gagnant de l'argent ?" />
-	<meta property="og:image" content="https://marketing.hjkl.it/img/profile.png" />
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="marketing.hjkl.it" />
+		<meta property="twitter:url" content="https://marketing.hjkl.it/" />
+		<meta name="twitter:title" content="Participez au sondage !" />
+		<meta
+			name="twitter:description"
+			content="👗 Prêts à faire du tri dans vos placards tout en gagnant de l'argent ?"
+		/>
+		<meta name="twitter:image" content="https://marketing.hjkl.it/img/profile.png" />
 
-	<!-- Twitter Meta Tags -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="twitter:domain" content="marketing.hjkl.it" />
-	<meta property="twitter:url" content="https://marketing.hjkl.it/" />
-	<meta name="twitter:title" content="Participez au sondage !" />
-	<meta name="twitter:description"
-		content="👗 Prêts à faire du tri dans vos placards tout en gagnant de l'argent ?" />
-	<meta name="twitter:image" content="https://marketing.hjkl.it/img/profile.png" />
+		%sveltekit.head%
+	</head>
 
-	%sveltekit.head%
-</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
 
-<body data-sveltekit-preload-data="hover">
-	<div style="display: contents">%sveltekit.body%</div>
-</body>
-
-<script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
-<script>
-	const myLandbot = new Landbot.Livechat({
-		configUrl: 'https://chats.landbot.io/v3/H-1131280-MIIXZIHNNM84XUUQ/index.json',
-	});
-</script>
-
+	<script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+	<script>
+		const myLandbot = new Landbot.Livechat({
+			configUrl: 'https://chats.landbot.io/v3/H-1131280-MIIXZIHNNM84XUUQ/index.json'
+		});
+	</script>
 </html>

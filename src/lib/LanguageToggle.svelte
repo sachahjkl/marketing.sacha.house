@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 
-	import { locale, locales } from 'svelte-i18n';
+	import { locale } from 'svelte-i18n';
 	import lang from './i18n/lang.json';
 
 	export let checked: boolean = $locale === 'en';
