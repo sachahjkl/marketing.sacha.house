@@ -13,7 +13,6 @@
 
 	let confettiTime = 0;
 	let clickAudio: HTMLAudioElement;
-	let timeout: number | null;
 
 	function click() {
 		clickAudio.play();
@@ -22,10 +21,9 @@
 		confettiTime += 1;
 		console.log('confetti in !', confettiTime);
 		// if (timeout) clearTimeout(timeout);
-		timeout = window.setTimeout(() => {
+		window.setTimeout(() => {
 			confettiTime -= 1;
 			console.log('confetti out !', confettiTime);
-			timeout = null;
 		}, DURATION + 100);
 	}
 </script>
