@@ -1,13 +1,15 @@
 <script lang="ts">
-	import countapi from 'countapi-js';
-	import ParticipateButton, { DURATION } from '$lib/ParticipateButton.svelte';
+	import ParticipateButton from '$lib/ParticipateButton.svelte';
 	import SocialBox from '$lib/SocialBox.svelte';
 	import SocialButton from '$lib/SocialButton.svelte';
+	import type countapi from 'countapi-js';
 	import { t } from 'svelte-i18n';
 
-	import Twitter from '$lib/icons/socials/twitter.svg?component';
-	import TikTok from '$lib/icons/socials/tiktok.svg?component';
-	import Instagram from '$lib/icons/socials/instagram.svg?component';
+	import DateCountdown from '$lib/DateCountdown.svelte';
+	import InstagramPreview from '$lib/InstagramPreview.svelte';
+	import Newsletter from '$lib/Newsletter.svelte';
+	import TikTokPreview from '$lib/TikTokPreview.svelte';
+	import TwitterPreview from '$lib/TwitterPreview.svelte';
 	import {
 		countdownDate,
 		instagramAccountURL,
@@ -16,13 +18,11 @@
 		tiktokURL,
 		twitterAccountURL
 	} from '$lib/constants';
-	import InstagramPreview from '$lib/InstagramPreview.svelte';
-	import TikTokPreview from '$lib/TikTokPreview.svelte';
-	import TwitterPreview from '$lib/TwitterPreview.svelte';
+	import Instagram from '$lib/icons/socials/instagram.svg?component';
+	import TikTok from '$lib/icons/socials/tiktok.svg?component';
+	import Twitter from '$lib/icons/socials/twitter.svg?component';
 	import { cubicOut } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
-	import DateCountdown from '$lib/DateCountdown.svelte';
-	import Newsletter from '$lib/Newsletter.svelte';
 
 	let sondageAnchor: HTMLAnchorElement;
 
@@ -42,9 +42,13 @@
 
 	async function clickCallback() {
 		try {
-			const { value } = await countapi.hit('marketing.hjkl.it', 'participants_v2');
+			// const { value } = await countapi.hit('marketing.hjkl.it', 'participants_v2');
+			const { value } = await data.streaming.participants.then<countapi.Result>((p) => {
+				p.value += 1;
+				return p;
+			});
 			$values = value;
-			setTimeout(() => sondageAnchor.click(), DURATION - 300);
+			// setTimeout(() => sondageAnchor.click(), DURATION - 300);
 		} catch (error) {
 			console.error(error);
 		}

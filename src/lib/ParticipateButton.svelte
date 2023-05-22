@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	export const DURATION = 1500;
+	export const MAX_CONFETTI = 5;
 </script>
 
 <script lang="ts">
@@ -10,18 +11,20 @@
 	export let soundFile = '/click.mp3';
 	export let clickCallback = () => console.info('Implement yourself !');
 
-	let confettiTime = false;
+	let confettiTime = 0;
 	let clickAudio: HTMLAudioElement;
 	let timeout: number | null;
 
 	function click() {
 		clickAudio.play();
 		clickCallback();
-		if (timeout) return;
-		confettiTime = true;
-		console.log('confetti !');
+		if (confettiTime >= MAX_CONFETTI) return;
+		confettiTime += 1;
+		console.log('confetti in !', confettiTime);
+		// if (timeout) clearTimeout(timeout);
 		timeout = window.setTimeout(() => {
-			confettiTime = false;
+			confettiTime -= 1;
+			console.log('confetti out !', confettiTime);
 			timeout = null;
 		}, DURATION + 100);
 	}
@@ -33,9 +36,9 @@
 	{/if}
 
 	<section class="flex justify-center">
-		{#if confettiTime}
-			<ConfettiSprayer duration={DURATION} />
-		{/if}
+		{#each { length: confettiTime } as _, i (i)}
+			<ConfettiSprayer duration={DURATION} stageWidth={window.innerWidth - 20} />
+		{/each}
 	</section>
 
 	<slot>Party Button !</slot>

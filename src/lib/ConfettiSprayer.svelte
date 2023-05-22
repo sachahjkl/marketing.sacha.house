@@ -117,6 +117,7 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
+
 	/**
 	 * Number of confetti particles to create
 	 *
@@ -174,7 +175,7 @@
 	 * <ConfettiExplosion particlesShape='rectangles' />
 	 * ```
 	 */
-	export let particlesShape = 'mix';
+	export let particlesShape: 'mix' | 'circles' | 'rectangles' = 'mix';
 	/**
 	 * Colors to use for the confetti particles. Pass string array of colors. Can use hex colors, named colors,
 	 * CSS Variables, literally anything valid in plain CSS.
