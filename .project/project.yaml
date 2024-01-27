@@ -1,0 +1,8 @@
+name: "marketing.sacha.house"
+description: "https://marketing.sacha.house - Site vitrine implémenté en SvelteKit + TailwindCSS. L'objectif était de pousser le visiteur à participer à un sondage."
+topics: []
+homepage: ""
+source:
+  provider: gitlab
+  namespace: "sachahjkl"
+  path: "sachahjkl/marketing.sacha.house"
