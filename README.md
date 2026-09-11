@@ -36,3 +36,9 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Deployment
+
+GitHub Actions checks every branch on GitHub-hosted runners. A commit on `master` publishes one immutable GHCR image and deploys staging.
+
+The production workflow promotes the exact staging digest after approval. Nomad jobs live in `deploy/nomad`.
