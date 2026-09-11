@@ -39,6 +39,6 @@ You can preview the production build with `npm run preview`.
 
 ## Deployment
 
-GitHub Actions checks every branch on GitHub-hosted runners. A commit on `master` publishes one immutable GHCR image and deploys staging.
+GitHub Actions checks pull requests and accepted `master` commits on `ubuntu-latest`. An accepted commit publishes one immutable GHCR image.
 
 The production workflow promotes the exact staging digest after approval. Nomad jobs live in `deploy/nomad`.
