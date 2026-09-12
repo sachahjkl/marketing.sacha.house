@@ -1,0 +1,8 @@
+application:
+  name: marketing-sacha-house
+  port: 3000
+  healthPath: /
+
+domain:
+  production: marketing.sacha.house
+  staging: staging.marketing.sacha.house
