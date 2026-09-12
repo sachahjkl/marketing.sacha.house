@@ -68,6 +68,13 @@ job "marketing-sacha-house" {
         name     = "marketing-sacha-house-staging"
         provider = "nomad"
         port     = "http"
+        tags = [
+          "traefik.enable=true",
+          "traefik.http.routers.marketing-sacha-house-staging.entrypoints=nomad",
+          "traefik.http.routers.marketing-sacha-house-staging.middlewares=marketing-sacha-house-staging-noindex",
+          "traefik.http.routers.marketing-sacha-house-staging.rule=Host(`staging.marketing.sacha.house`)",
+          "traefik.http.middlewares.marketing-sacha-house-staging-noindex.headers.customresponseheaders.X-Robots-Tag=noindex, nofollow",
+        ]
 
         check {
           name     = "HTTP health"
