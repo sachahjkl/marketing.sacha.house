@@ -68,7 +68,7 @@ job "marketing-sacha-house" {
         port     = "http"
         tags = [
           "traefik.enable=true",
-          "traefik.http.routers.marketing-sacha-house-staging.entrypoints=nomad",
+          "traefik.http.routers.marketing-sacha-house-staging.entrypoints=websecure",
           "traefik.http.routers.marketing-sacha-house-staging.middlewares=marketing-sacha-house-staging-noindex",
           "traefik.http.routers.marketing-sacha-house-staging.rule=Host(`staging.marketing.sacha.house`)",
           "traefik.http.routers.marketing-sacha-house-staging.tls.domains[0].main=staging.marketing.sacha.house",
